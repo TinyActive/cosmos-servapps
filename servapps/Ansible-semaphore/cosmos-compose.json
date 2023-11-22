@@ -1,0 +1,105 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "SEMAPHORE_ADMIN_EMAIL",
+                "label": "What is your semaphore email login?",
+                "initialValue": "semaphore@manhtuong.net",
+                "type": "text"
+            },
+            {
+                "name": "SEMAPHORE_ADMIN_NAME",
+                "label": "What semaphore username does it use?",
+                "initialValue": "admin",
+                "type": "text"
+            },
+            {
+                "name": "SEMAPHORE_ADMIN_PASSWORD",
+                "label": "What semaphore password does it use?",
+                "initialValue": "fd4y3Sb4VnUbegrD",
+                "type": "password"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "semaphoreui/semaphore",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "SEMAPHORE_DB_USER=semaphore",
+                "SEMAPHORE_DB_PASS={Passwords.1}",
+                "SEMAPHORE_DB=semaphore",
+                "SEMAPHORE_DB_HOST={ServiceName}-db",
+                "SEMAPHORE_DB_PORT=3306",
+                "SEMAPHORE_DB_DIALECT=mysql",
+                "SEMAPHORE_ADMIN_PASSWORD={Context.SEMAPHORE_ADMIN_PASSWORD}",
+                "SEMAPHORE_ACCESS_KEY_ENCRYPTION=l9610FTmikYiDoACzX872tHC/kPVpik02PcDDUVj3Ls=",
+                "SEMAPHORE_ADMIN_NAME={Context.SEMAPHORE_ADMIN_NAME}",
+                "SEMAPHORE_ADMIN_EMAIL={Context.SEMAPHORE_ADMIN_EMAIL}",
+                "SEMAPHORE_ADMIN={Context.SEMAPHORE_ADMIN_NAME}",
+                "SEMAPHORE_LDAP_ACTIVATED=no"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://comos.manhtuong.net/servapps/Ansible-semaphore/icon.png"
+            },
+            "networks": {
+                "{ServiceName}": {}
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-data-home",
+                    "target": "/etc/semaphore",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-data-lib",
+                    "target": "/var/lib/semaphore",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:3000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+
+        },
+        "{ServiceName}-db": {
+            "image": "docker.io/bitnami/mysql:8.0",
+            "container_name": "{ServiceName}-db",
+            "hostname": "{ServiceName}-db",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-db",
+                "target": "/bitnami/mysql",
+                "type": "volume"
+            }],
+            "environment": [
+                "MYSQL_ROOT_PASSWORD={Passwords.3}",
+                "MYSQL_DATABASE=semaphore",
+                "MYSQL_USER=semaphore",
+                "MYSQL_PASSWORD={Passwords.1}"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD"
+            }
+        }
+    },
+    "networks": {
+        "{ServiceName}": {}
+    }
+}

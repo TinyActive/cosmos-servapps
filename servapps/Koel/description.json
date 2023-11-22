@@ -1,0 +1,9 @@
+{
+    "name": "Koel",
+    "longDescription": "<p>Koel (also stylized as koel, with a lowercase k) is a simple web-based personal audio streaming service written in Vue on the client side and Laravel on the server side. Targeting web developers, Koel embraces some of the more modern web technologies to do its job..</p>",
+    "description": "Koel (also stylized as koel, with a lowercase k) is a simple web-based personal audio streaming service.",
+    "tags": ["music", "self-hosted"],
+    "repository": "https://github.com/koel/docker/",
+    "image": "https://hub.docker.com/r/phanan/koel",
+    "supported_architectures": ["amd64", "arm64"]
+}

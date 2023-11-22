@@ -1,0 +1,9 @@
+{
+    "name": "Ansible-Semaphore",
+    "longDescription": "<p>Ansible Semaphore is a modern UI for Ansible. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system. If your project has grown and deploying from the terminal is no longer for you then Ansible Semaphore is what you need.</p> ",
+    "description": "Ansible Semaphore is a modern UI for Ansible.",
+    "tags": ["system", "devops", "secured", "security", "Ansible", "Semaphore", "Ansible Semaphore"],
+    "repository": "https://github.com/ansible-semaphore/semaphore",
+    "image": "https://hub.docker.com/r/semaphoreui/semaphore",
+    "supported_architectures": ["amd64", "arm64"]
+}

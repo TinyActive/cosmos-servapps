@@ -1,0 +1,9 @@
+{
+    "name": "Hedgedoc",
+    "longDescription": "<p>HedgeDoc is a real-time, multi-platform collaborative markdown note editor. This means that you can write notes with other people on your desktop, tablet or even on the phone. You can sign-in via multiple auth providers like Facebook, Twitter, GitHub and many more on the homepage.</p>",
+    "description": "HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor",
+    "tags": ["real-time", "self-hosted", "markdown", "note"],
+    "repository": "https://github.com/linuxserver/docker-hedgedoc",
+    "image": "https://hub.docker.com/r/linuxserver/hedgedoc",
+    "supported_architectures": ["amd64", "arm64"]
+}

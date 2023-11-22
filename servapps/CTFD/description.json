@@ -1,0 +1,9 @@
+{
+    "name": "CTFd",
+    "longDescription": "<p>CTFd has features designed to support organizers. Constant development efforts, open source contributors, combined with plugins and themes give it the most flexibility of any CTF framework..</p>",
+    "description": "CTFd is a Capture The Flag framework focusing on ease of use and customizability. It comes with everything you need to run a CTF and it's easy to customize with plugins and themes.",
+    "tags": ["CTFd", "Capture The Flag", "server", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/CTFd/CTFd/",
+    "image": "https://hub.docker.com/r/ctfd/ctfd/",
+    "supported_architectures": ["amd64", "arm64"]
+}
