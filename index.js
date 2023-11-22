@@ -12,6 +12,7 @@ for (const file of servapps) {
     const servapp = require(`./servapps/${file}/description.json`)
     servapp.id = file
     servapp.screenshots = [];
+    servapp.logo = [];
     servapp.artefacts = {};
 
     // list all screenshots in the directory servapps/${file}/screenshots
