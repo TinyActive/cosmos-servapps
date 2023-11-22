@@ -3,32 +3,40 @@
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
-            "image": "lscr.io/linuxserver/chromium:latest",
+            "image": "lscr.io/linuxserver/qbittorrent:latest",
             "container_name": "{ServiceName}",
-            "security_opt": [
-                "seccomp:unconfined"
-            ],
             "environment": [
                 "PUID=1000",
                 "PGID=1000",
-                "TZ=Etc/UTC"
+                "TZ=Etc/UTC",
+                "WEBUI_PORT=8080"
             ],
             "labels": {
                 "cosmos-persistent-env": "PUID, PGID, TZ",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
-                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Chromium/icon.png"
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Qbittorrent/icon.png"
             },
             "volumes": [{
-                "source": "{ServiceName}-config",
-                "target": "/config",
-                "type": "volume"
-            }],
+                    "source": "{ServiceName}-qbittorrent-config",
+                    "target": "/config",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-qbittorrent-downloads",
+                    "target": "/downloads",
+                    "type": "volume"
+                }
+            ],
+            "ports": [
+                "6881:6881",
+                "6881:6881/udp"
+            ],
             "routes": [{
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",
                 "useHost": true,
-                "target": "http://{ServiceName}:3000",
+                "target": "http://{ServiceName}:8080",
                 "mode": "SERVAPP",
                 "Timeout": 14400000,
                 "ThrottlePerMinute": 12000,
@@ -36,9 +44,7 @@
                 "SmartShield": {
                     "Enabled": true
                 }
-            }],
-            "shm_size": "4gb",
-            "restart": "unless-stopped"
+            }]
         }
     }
 }

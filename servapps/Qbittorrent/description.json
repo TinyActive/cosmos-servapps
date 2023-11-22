@@ -1,0 +1,9 @@
+{
+    "name": "qBittorrent",
+    "longDescription": "<p>qBittorrent is a cross-platform free and open-source BitTorrent client written in native C++. It relies on Boost, OpenSSL, zlib, Qt 6 toolkit and the libtorrent-rasterbar library (for the torrent back-end), with an optional search engine written in Python.</p>",
+    "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
+    "tags": ["qBittorrent", "torrent", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/linuxserver/docker-chromium/",
+    "image": "https://hub.docker.com/r/linuxserver/chromium/",
+    "supported_architectures": ["amd64", "arm64"]
+}
