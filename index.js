@@ -13,6 +13,7 @@ for (const file of servapps) {
     servapp.id = file
     servapp.screenshots = [];
     servapp.logo = [];
+    servapp.icon = [];
     servapp.artefacts = {};
 
     // list all screenshots in the directory servapps/${file}/screenshots
@@ -30,8 +31,8 @@ for (const file of servapps) {
     }
 
     // servapp.icon = `https://cosmos.manhtuong.net/servapps/${file}/icon.png`
-    for (const logo of logo) {
-        servapp.icon = (`https://cosmos.manhtuong.net/servapps/${file}/logo/${logo}`)
+    for (const icon of logo) {
+        servapp.icon = (`https://cosmos.manhtuong.net/servapps/${file}/logo/${icon}`)
     }
 
     servapp.compose = `https://cosmos.manhtuong.net/servapps/${file}/cosmos-compose.json`
