@@ -20,7 +20,7 @@
                 "cosmos-persistent-env": "DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD, DB_HOST",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
-                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Koel/icon.png"
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Koel/logo/icon.png"
             },
             "networks": {
                 "{ServiceName}-postgres": {}

@@ -1,0 +1,9 @@
+{
+    "name": "Jira",
+    "longDescription": "<p>Jira was an open source tool available for anyone to download. Its popularity drove thousands of users to adopt it within organizations across the globe. Unlike IBM Engineering Management Platform, Jira is primarily for use in small teams and individuals, not large projects or enterprises.</p>",
+    "description": "Make the impossible, possible in Jira. Plan, track, and release world-class software with the number one project management tool for agile teams.",
+    "tags": ["Jira", "Software", "Jira Software", "self-hosted", "atlassian"],
+    "repository": "https://github.com/vncloudsco/jira-install/",
+    "image": "https://hub.docker.com/r/vouu/jira/",
+    "supported_architectures": ["amd64", "arm64"]
+}
