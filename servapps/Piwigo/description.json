@@ -1,0 +1,9 @@
+{
+    "name": "Piwigo",
+    "longDescription": "<p>Piwigo can be deployed using various methods in a hosting environment. Users download the current version of Piwigo from Piwigo.org. Either they download the full archive and upload the source code to their hosting environment or they download the NetInstall (a single PHP file), upload it to their hosting environment and let it download the full archive automatically.</p>",
+    "description": "Manage your photo library with Piwigo! Free and open source software to organize and share your photos and digital media on the web.",
+    "tags": ["CTFd", "Capture The Flag", "server", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/linuxserver/docker-piwigo",
+    "image": "https://hub.docker.com/r/linuxserver/piwigo/",
+    "supported_architectures": ["amd64", "arm64"]
+}

@@ -1,0 +1,47 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "lscr.io/linuxserver/piwigo",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "restart": "unless-stopped",
+            "volumes": [{
+                    "source": "{ServiceName}-piwigo-config",
+                    "target": "/piwigo",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-piwigo-gallery",
+                    "target": "/gallery",
+                    "type": "volume"
+                }
+            ],
+            "environment": [
+                "PUID=1000",
+                "PGID=1000",
+                "TZ=Etc/UTC"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID, TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Piwigo/icon.png"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:80",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        }
+    }
+}
