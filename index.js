@@ -50,10 +50,10 @@ for (const servapp of servappsJSON) {
     servapp.compose = `http://localhost:3000/servapps/${servapp.id}/cosmos-compose.json`
     servapp.icon = `http://localhost:3000/servapps/${servapp.id}/icon.png`
     for (let i = 0; i < servapp.screenshots.length; i++) {
-        servapp.screenshots[i] = servapp.screenshots[i].replace('https://comos.manhtuong.net', 'http://localhost:3000')
+        servapp.screenshots[i] = servapp.screenshots[i].replace('https://cosmos.manhtuong.net', 'http://localhost:3000')
     }
     for (const artefact in servapp.artefacts) {
-        servapp.artefacts[artefact] = servapp.artefacts[artefact].replace('https://comos.manhtuong.net', 'http://localhost:3000')
+        servapp.artefacts[artefact] = servapp.artefacts[artefact].replace('https://cosmos.manhtuong.net', 'http://localhost:3000')
     }
 }
 
