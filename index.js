@@ -16,6 +16,7 @@ for (const file of servapps) {
 
     // list all screenshots in the directory servapps/${file}/screenshots
     const screenshots = fs.readdirSync(`./servapps/${file}/screenshots`)
+    const logo = fs.readdirSync(`./servapps/${file}/logo`)
     for (const screenshot of screenshots) {
         servapp.screenshots.push(`https://cosmos.manhtuong.net/servapps/${file}/screenshots/${screenshot}`)
     }
@@ -27,7 +28,11 @@ for (const file of servapps) {
         }
     }
 
-    servapp.icon = `https://cosmos.manhtuong.net/servapps/${file}/icon.png`
+    // servapp.icon = `https://cosmos.manhtuong.net/servapps/${file}/icon.png`
+    for (const logo of logo) {
+        servapp.icon = (`https://cosmos.manhtuong.net/servapps/${file}/logo/${logo}`)
+    }
+
     servapp.compose = `https://cosmos.manhtuong.net/servapps/${file}/cosmos-compose.json`
 
     servappsJSON.push(servapp)
