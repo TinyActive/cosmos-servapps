@@ -1,0 +1,9 @@
+{
+    "name": "WatchState",
+    "longDescription": "<p>WatchState This tool primary goal is to sync your backends play state without relying on third party services, out of the box, this tool support Jellyfin, Plex and Emby media servers</p>",
+    "description": "WatchState This tool primary goal is to sync your backends play state without relying on third party services, out of the box, this tool support Jellyfin, Plex and Emby media servers",
+    "tags": ["media", "movies", "streaming", "music", "self-hosted", "linux"],
+    "repository": "https://github.com/ArabCoders/watchstate/",
+    "image": "https://github.com/ArabCoders/watchstate/",
+    "supported_architectures": ["amd64", "arm64"]
+}
