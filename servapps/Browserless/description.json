@@ -1,0 +1,9 @@
+{
+    "name": "Browserless",
+    "longDescription": "<p>browserless is a web-based service that allows for remote clients to connect and execute headless work; all inside of docker. It supports new libraries like Puppeteer and Playwright, aiming to replace antiquated or in-house systems. We also bundle numerous handy REST-based APIs for doing more common actions like data collection, PDF generation and more.</p>",
+    "description": "The docker image that powers the core of browserless is available for free for open-source projects. Using it is about as simple as using the browserless service itself with the only difference being that you'll have to launch and manage the infrastructure.",
+    "tags": ["browserless", "browser", "open-source", "self-hosted", "linux", "chrome"],
+    "repository": "https://github.com/browserless/browserless/",
+    "image": "https://github.com/browserless/browserless/",
+    "supported_architectures": ["amd64", "arm64"]
+}
