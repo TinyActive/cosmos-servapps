@@ -1,0 +1,9 @@
+{
+    "name": "Confluence",
+    "longDescription": "<p>Confluence is a web-based corporate wiki developed by Australian software company Atlassian. Atlassian wrote Confluence in the Java programming language and first published it in 2004. Confluence Standalone comes with a built-in Tomcat web server and hsql database, and also supports other databases.</p>",
+    "description": "Confluence is your remote-friendly team workspace where knowledge and collaboration meet.",
+    "tags": ["Confluence", "Software", "remote", "self-hosted", "atlassian", "workspace", "collaboration"],
+    "repository": "https://github.com/vncloudsco/confluence/",
+    "image": "https://hub.docker.com/r/vouu/confluence/",
+    "supported_architectures": ["amd64", "arm64"]
+}
