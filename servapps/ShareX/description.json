@@ -1,0 +1,9 @@
+{
+    "name": "ShareX",
+    "longDescription": "<p>A ShareX/file upload server that is easy to use, packed with features, and with an easy setup!..</p>",
+    "description": "The next generation ShareX / File upload server.",
+    "tags": ["file", "filemanager", "upload", "sharefile", "self-hosted"],
+    "repository": "https://github.com/diced/zipline/",
+    "image": "https://github.com/diced/zipline",
+    "supported_architectures": ["amd64", "arm64"]
+}
