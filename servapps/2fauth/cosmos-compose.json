@@ -140,26 +140,26 @@
                 }
             }],
             "restart": "unless-stopped"
+        },
+        "{ServiceName}-redis": {
+            "image": "bitnami/redis:7.0",
+            "container_name": "{ServiceName}-redis",
+            "hostname": "{ServiceName}-redis",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-redis",
+                "target": "/bitnami/redis",
+                "type": "volume"
+            }],
+            "labels": {
+                "cosmos-persistent-env": "REDIS_PASSWORD"
+            },
+            "environment": [
+                "REDIS_PASSWORD={Passwords.1}"
+            ]
         }
-    },
-    "{ServiceName}-redis": {
-        "image": "bitnami/redis:7.0",
-        "container_name": "{ServiceName}-redis",
-        "hostname": "{ServiceName}-redis",
-        "restart": "unless-stopped",
-        "networks": {
-            "{ServiceName}-postgres": {}
-        },
-        "volumes": [{
-            "source": "{ServiceName}-redis",
-            "target": "/bitnami/redis",
-            "type": "volume"
-        }],
-        "labels": {
-            "cosmos-persistent-env": "REDIS_PASSWORD"
-        },
-        "environment": [
-            "REDIS_PASSWORD={Passwords.1}"
-        ]
     }
 }
