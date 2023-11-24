@@ -1,0 +1,9 @@
+{
+    "name": "2FAuth",
+    "longDescription": "<p>2FAuth's purpose is to simplify how you use and manage your 2FA with a clean and suitable interface, no matter what device you use. In front of your computer without your smartphone and dealing with a code request? No problemo, just open your 2FAuth instance in a browser tab and voilà.</p>",
+    "description": "2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.",
+    "tags": ["2FAuth", "2fa", "Auth", "self-hosted", "totp", "otp"],
+    "repository": "https://github.com/Bubka/2FAuth",
+    "image": "https://hub.docker.com/r/2fauth/2fauth/",
+    "supported_architectures": ["amd64", "arm64"]
+}

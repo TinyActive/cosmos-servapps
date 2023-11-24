@@ -1,0 +1,165 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "SITE_OWNER",
+                "label": "What is your 2fauth user email?",
+                "initialValue": "contact@tinyactive.net",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_HOST",
+                "label": "What smtp domain does it use?",
+                "initialValue": "smtp.gmail.com",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_PORT",
+                "label": "What smtp port does it use?",
+                "initialValue": "587",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_FROM",
+                "label": "What email from does it use?",
+                "initialValue": "contact@tinyactive.net",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_USERNAME",
+                "label": "What email user does it use?",
+                "initialValue": "contact@tinyactive.net",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_PASSWORD",
+                "label": "What email password does it use?",
+                "initialValue": "fd4y3Sb4VnUbegrD",
+                "type": "password"
+            },
+            {
+                "name": "MAIL_ENCRYPTION",
+                "label": "What encryption does it use tls or ssl?",
+                "initialValue": "tls",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_FROM_NAME",
+                "label": "What email name does it use?",
+                "initialValue": "Tinyactive",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_FROM_ADDRESS",
+                "label": "What email name does it use?",
+                "initialValue": "contact@tinyactive.net",
+                "type": "text"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "2fauth/2fauth",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "environment": [
+                "APP_NAME=2FAuth",
+                "APP_ENV=local",
+                "APP_DEBUG=false",
+                "SITE_OWNER={Context.SITE_OWNER}",
+                "APP_KEY=tLfTrAbKr3NBWtHlTmkMF65HHd8qrmWD",
+                "APP_URL=http://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
+                "IS_DEMO_APP=false",
+                "LOG_CHANNEL=daily",
+                "LOG_LEVEL=notice",
+                "DB_DATABASE=\"/srv/database/database.sqlite\"",
+                "CACHE_DRIVER=file",
+                "SESSION_DRIVER=file",
+                "MAIL_DRIVER=log",
+                "MAIL_HOST={Context.MAIL_HOST}",
+                "MAIL_PORT={Context.MAIL_PORT}",
+                "MAIL_FROM={Context.MAIL_FROM}",
+                "MAIL_USERNAME={Context.MAIL_USERNAME}",
+                "MAIL_PASSWORD={Context.MAIL_PASSWORD}",
+                "MAIL_ENCRYPTION={Context.MAIL_ENCRYPTION}",
+                "MAIL_FROM_NAME={Context.MAIL_FROM_NAME}",
+                "MAIL_FROM_ADDRESS={Context.MAIL_FROM_ADDRESS}",
+                "AUTHENTICATION_GUARD=web-guard",
+                "AUTH_PROXY_HEADER_FOR_USER=null",
+                "AUTH_PROXY_HEADER_FOR_EMAIL=null",
+                "PROXY_LOGOUT_URL=null",
+                "WEBAUTHN_NAME=2FAuth",
+                "WEBAUTHN_ID=null",
+                "WEBAUTHN_ICON=null",
+                "WEBAUTHN_USER_VERIFICATION=preferred",
+                "TRUSTED_PROXIES=*",
+                "BROADCAST_DRIVER=log",
+                "QUEUE_DRIVER=sync",
+                "SESSION_LIFETIME=120",
+                "REDIS_HOST={ServiceName}-redis",
+                "REDIS_PASSWORD={Passwords.1}",
+                "REDIS_PORT=6379",
+                "PUSHER_APP_ID=",
+                "PUSHER_APP_KEY=",
+                "PUSHER_APP_SECRET=",
+                "PUSHER_APP_CLUSTER=mt1",
+                "MIX_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\"",
+                "MIX_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\"",
+                "MIX_ENV=local"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "TRUSTED_PROXIES, PUSHER_APP_SECRET, REDIS_PORT",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/2fauth/logo/ezgif-2-01616207b8.png"
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-2fauth",
+                    "target": "/2fauth",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-database",
+                    "target": "/srv/database",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    },
+    "{ServiceName}-redis": {
+        "image": "bitnami/redis:7.0",
+        "container_name": "{ServiceName}-redis",
+        "hostname": "{ServiceName}-redis",
+        "restart": "unless-stopped",
+        "networks": {
+            "{ServiceName}-postgres": {}
+        },
+        "volumes": [{
+            "source": "{ServiceName}-redis",
+            "target": "/bitnami/redis",
+            "type": "volume"
+        }],
+        "labels": {
+            "cosmos-persistent-env": "REDIS_PASSWORD"
+        },
+        "environment": [
+            "REDIS_PASSWORD={Passwords.1}"
+        ]
+    }
+}
