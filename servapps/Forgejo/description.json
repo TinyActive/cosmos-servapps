@@ -1,0 +1,9 @@
+{
+    "name": "Forgejo",
+    "longDescription": "<p>Brought to you by an inclusive community under the umbrella of Codeberg e.V., a democratic non-profit organization, Forgejo can be trusted to be exclusively Free Software. It includes and cooperates with hundreds of projects (Gitea, Git, ...) and is focused on scaling, federation and privacy.</p>",
+    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.",
+    "tags": ["2FAuth", "2fa", "Auth", "self-hosted", "totp", "otp"],
+    "repository": "https://codeberg.org/forgejo/forgejo",
+    "image": "https://codeberg.org/forgejo/forgejo/",
+    "supported_architectures": ["amd64", "arm64"]
+}

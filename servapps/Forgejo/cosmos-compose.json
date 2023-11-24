@@ -1,0 +1,75 @@
+{
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "The SSH port for this container is 222"
+        }]
+    },
+    "minVersion": "0.9.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "codeberg.org/forgejo/forgejo:1.20",
+            "container_name": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "TZ=auto",
+                "USER_UID=1000",
+                "USER_GID=1000",
+                "FORGEJO__database__DB_TYPE=mysql",
+                "FORGEJO__database__HOST={ServiceName}-db:3306",
+                "FORGEJO__database__NAME=forgejo",
+                "FORGEJO__database__USER=forgejo",
+                "FORGEJO__database__PASSWD={Passwords.1}"
+            ],
+            "ports": [
+                "222:22"
+            ],
+            "labels": {
+                "cosmos-network-name": "AUTO",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Forgejo/logo/73144-c883a242dec5299fbc06bbe3ee71d8c6.png"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-data",
+                "target": "/data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:3000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        },
+        "{ServiceName}-db": {
+            "image": "docker.io/bitnami/mariadb:11.1",
+            "container_name": "{ServiceName}-db",
+            "hostname": "{ServiceName}-db",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-db",
+                "target": "/bitnami/mariadb",
+                "type": "volume"
+            }],
+            "environment": [
+                "MARIADB_DATABASE=forgejo",
+                "MARIADB_USER=forgejo",
+                "MARIADB_PASSWORD={Passwords.1}",
+                "MARIADB_ROOT_PASSWORD={Passwords.2}"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "MARIADB_DATABASE, MARIADB_USER, MARIADB_PASSWORD, MARIADB_ROOT_PASSWORD"
+            }
+        }
+    }
+}
