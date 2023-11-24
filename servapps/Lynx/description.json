@@ -1,0 +1,9 @@
+{
+    "name": "Lynx",
+    "longDescription": "<p>Lynx is a URL shortener built using the MEVN stack with features such as multi-user support, ShareX integration and 2FA.</p>",
+    "description": "Lynx is a URL shortener built using the MEVN stack with features such as multi-user support, ShareX integration and 2FA.",
+    "tags": ["Lynx", "url", "shortener", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/Lynx-Shortener/Lynx/",
+    "image": "https://hub.docker.com/r/jackbailey/lynx/",
+    "supported_architectures": ["amd64", "arm64"]
+}
