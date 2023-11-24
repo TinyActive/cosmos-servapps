@@ -1,0 +1,9 @@
+{
+    "name": "Chromium",
+    "longDescription": "<p>Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web. This site contains design documents, architecture overviews, testing information, and more to help you learn to build and work with the Chromium source code.</p>",
+    "description": "Chromium is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.",
+    "tags": ["Chromium", "Chrome", "browser", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/linuxserver/docker-chromium/",
+    "image": "https://hub.docker.com/r/linuxserver/chromium/",
+    "supported_architectures": ["amd64", "arm64"]
+}
