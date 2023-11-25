@@ -1,0 +1,9 @@
+{
+    "name": "CloudBeaver",
+    "longDescription": "<p>CloudBeaver is a web server which provides rich web interface. Server itself is a Java application, web part is written on TypeScript and React.</p>",
+    "description": "CloudBeaver is a web server which provides rich web interface. Server itself is a Java application, web part is written on TypeScript and React.",
+    "tags": ["Chromium", "Chrome", "browser", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/dbeaver/cloudbeaver/",
+    "image": "https://hub.docker.com/r/dbeaver/cloudbeaver/",
+    "supported_architectures": ["amd64", "arm64"]
+}
