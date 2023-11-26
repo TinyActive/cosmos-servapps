@@ -1,0 +1,49 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "jhaals/yopass",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "command": "--memcached={ServiceName}-memcached:11211 --port 80",
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Yopass/logo/icon.png"
+            },
+            "networks": {
+                "{ServiceName}-memcached": {}
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:1337",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        },
+            "{ServiceName}-memcached": {
+              "image": "memcached",
+              "restart": "always",
+              "container_name": "memcached",
+              "networks": {
+                "{ServiceName}-memcached": {}
+            },
+            }
+    },
+    "networks": {
+        "{ServiceName}-memcached": {}
+    }
+}
