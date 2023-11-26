@@ -1,0 +1,9 @@
+{
+    "name": "PasswordPusher",
+    "longDescription": "<p>An application to securely communicate passwords over the web. Passwords automatically expire after a certain number of views and/or time has passed. Track who, what and when.</p>",
+    "description": "Password Pusher is an opensource application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.",
+    "tags": ["PasswordPusher", "Password", "sharing", "self-hosted"],
+    "repository": "https://github.com/pglombardo/PasswordPusher/",
+    "image": "https://hub.docker.com/r/pglombardo/pwpush/",
+    "supported_architectures": ["amd64", "arm64"]
+}
