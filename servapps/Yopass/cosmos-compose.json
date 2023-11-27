@@ -34,14 +34,14 @@
             "shm_size": "4gb",
             "restart": "unless-stopped"
         },
-            "{ServiceName}-memcached": {
-              "image": "memcached",
-              "restart": "always",
-              "container_name": "memcached",
-              "networks": {
+        "{ServiceName}-memcached": {
+            "image": "memcached",
+            "restart": "always",
+            "container_name": "memcached",
+            "networks": {
                 "{ServiceName}-memcached": {}
-            },
             }
+        }
     },
     "networks": {
         "{ServiceName}-memcached": {}
