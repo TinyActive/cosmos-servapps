@@ -45,3 +45,4 @@ add this infomation and save
 | [ShareX](https://github.com/diced/zipline)   | The next generation ShareX / File upload server | 
 | [WatchState](https://github.com/ArabCoders/watchstate)   | WatchState This tool primary goal is to sync your backends play state without relying on third party services, out of the box, this tool support Jellyfin, Plex and Emby media servers | 
 | [Yopass](https://github.com/jhaals/yopass)   | Yopass is a project for sharing secrets in a quick and secure manner*. The sole purpose of Yopass is to minimize the amount of passwords floating around in ticket management systems | 
+| [Wiki.js](https://github.com/requarks/wiki)   | Wiki.js is an open source project that has been made possible due to the generous contributions by community backers | 
