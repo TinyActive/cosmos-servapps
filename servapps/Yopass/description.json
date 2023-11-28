@@ -2,8 +2,8 @@
     "name": "Yopass",
     "longDescription": "<p>Yopass is a project for sharing secrets in a quick and secure manner*. The sole purpose of Yopass is to minimize the amount of passwords floating around in ticket management systems, Slack messages and emails. The message is encrypted/decrypted locally in the browser and then sent to yopass without the decryption key which is only visible once during encryption, yopass then returns a one-time URL with specified expiry date.</p>",
     "description": "Yopass is a project for sharing secrets in a quick and secure manner*. The sole purpose of Yopass is to minimize the amount of passwords floating around in ticket management systems.....",
-    "tags": ["PasswordPusher", "Password", "sharing", "self-hosted"],
-    "repository": "https://github.com/linuxserver/docker-chromium/",
-    "image": "https://hub.docker.com/r/linuxserver/chromium/",
+    "tags": ["Yopass", "Password", "sharing", "self-hosted"],
+    "repository": "https://github.com/jhaals/yopass/",
+    "image": "https://github.com/jhaals/yopass/",
     "supported_architectures": ["amd64", "arm64"]
 }
