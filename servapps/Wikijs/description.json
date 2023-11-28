@@ -1,0 +1,9 @@
+{
+    "name": "Wiki.js",
+    "longDescription": "<p>Wiki.js is a wiki engine running on Node.js and written in JavaScript. It is free software released under the Affero GNU General Public License. It is available as a self-hosted solution </p>",
+    "description": "Wiki.js is an open source project that has been made possible due to the generous contributions by community backers..",
+    "tags": ["Wiki", "Software", "remote", "self-hosted", "js", "workspace", "collaboration"],
+    "repository": "https://github.com/requarks/wiki",
+    "image": "https://ghcr.io/requarks/wiki/",
+    "supported_architectures": ["amd64", "arm64"]
+}
