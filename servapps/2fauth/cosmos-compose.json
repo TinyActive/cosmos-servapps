@@ -161,5 +161,8 @@
                 "REDIS_PASSWORD={Passwords.1}"
             ]
         }
+    },
+    "networks": {
+        "{ServiceName}-postgres": {}
     }
 }
