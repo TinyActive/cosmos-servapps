@@ -27,7 +27,7 @@
                 "BACKUP=true",
                 "BACKUP_SCHEDULE=* * * * *",
                 "BACKUP_COUNT=5",
-                "URL_REGEX=https?:\/\/(www.)?[-a-zA-Z0-9@:%._+~#=]{1,256}.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)"
+                "URL_REGEX=https?:\/\/(www\/.)?[-a-zA-Z0-9@:%._\/+~#=]{1,256}\/.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\/+.~#?&//=]*)|twitter:\/\/user\/?screen_name=[a-zA-Z0-9_]+"
             ],
             "labels": {
                 "cosmos-persistent-env": "PUID, PGID, TZ",
