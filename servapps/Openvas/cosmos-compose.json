@@ -4,7 +4,7 @@
                 "name": "PASSWORD",
                 "label": "What is your password for user admin?",
                 "initialValue": "66XV6F320P8qTGKSA2ZLZTO7",
-                "type": "text"
+                "type": "password"
             }
         ]
     },
