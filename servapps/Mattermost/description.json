@@ -1,6 +1,6 @@
 {
     "name": "Mattermost",
-    "longDescription": "<p>Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams..</p>",
+    "longDescription": "<p>Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams.</p>",
     "description": "Mattermost is a secure collaboration platform for accelerating mission critical work in complex environments.",
     "tags": ["Mattermost", "Chat", "open-source", "self-hosted", "linux"],
     "repository": "https://github.com/chatwoot/chatwoot/",
