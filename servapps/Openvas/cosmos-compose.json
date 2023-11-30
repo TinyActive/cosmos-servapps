@@ -1,5 +1,13 @@
 {
-    "cosmos-installer": {},
+    "cosmos-installer": {
+        "form": [{
+                "name": "PASSWORD",
+                "label": "What is your password for user admin?",
+                "initialValue": "66XV6F320P8qTGKSA2ZLZTO7",
+                "type": "text"
+            }
+        ]
+    },
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
@@ -9,7 +17,7 @@
                 "seccomp:unconfined"
             ],
             "environment": [
-                "PASSWORD={Passwords.0}"
+                "PASSWORD={Context.PASSWORD}"
               ],
             "labels": {
                 "cosmos-persistent-env": "PASSWORD",
