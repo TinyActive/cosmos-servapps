@@ -1,0 +1,49 @@
+{
+    "cosmos-installer": {
+        "form": [{
+            "name": "DISK_SIZE",
+            "label": "How much storage do you want?",
+            "initialValue": "16",
+            "type": "text"
+        }]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "container_name": "{ServiceName}",
+            "image": "vdsm/virtual-dsm:latest",
+            "environment": [
+                "DISK_SIZE={Context.DISK_SIZE}G"
+            ],
+            "cap_add": [
+                "NET_ADMIN"
+            ],
+            "volumes": [{
+                "source": "{ServiceName}-dsm",
+                "target": "/storage",
+                "type": "volume"
+            }],
+            "restart": "on-failure",
+            "stop_grace_period": "1m",
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID, TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/DiskStation/logo/icon.png"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:5000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        }
+    }
+}
