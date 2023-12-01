@@ -1,0 +1,54 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "thingsboard/tb-postgres",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "ports": [
+                "1883:1883",
+                "7070:7070",
+                "5683-5688:5683-5688/udp"
+              ],
+              "environment": [
+                "TB_QUEUE_TYPE=in-memory"
+              ],
+            "labels": {
+                "cosmos-persistent-env": "TB_QUEUE_TYPE",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Thingsboard/logo/301520891_569750594942636_5308830562915468264_n.png"
+            },
+            "volumes": [
+                {
+                  "source": "{ServiceName}-mytb-data",
+                  "target": "/data",
+                  "type": "volume"
+                },
+                {
+                  "source": "{ServiceName}-mytb-logs",
+                  "target": "/var/log/thingsboard",
+                  "type": "volume"
+                }
+              ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:9090",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}

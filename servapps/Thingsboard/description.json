@@ -1,0 +1,9 @@
+{
+    "name": "ThingsBoard",
+    "longDescription": "<p>ThingsBoard is an open-source IoT platform that enables rapid development, management, and scaling of IoT projects. Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications.</p>",
+    "description": "ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management.",
+    "tags": ["ThingsBoard", "IOT", "browser", "open-source", "self-hosted", "linux"],
+    "repository": "https://thingsboard.io/docs/user-guide/install/docker//",
+    "image": "https://hub.docker.com/r/thingsboard/tb-postgres/",
+    "supported_architectures": ["amd64", "arm64"]
+}
