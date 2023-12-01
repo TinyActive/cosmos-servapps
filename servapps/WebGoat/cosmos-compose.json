@@ -1,0 +1,72 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "WEBGOAT_HOST",
+                "label": "What is your webgoat domain?",
+                "initialValue": "webgoat.com",
+                "type": "text"
+            },
+            {
+                "name": "WEBWOLF_HOST",
+                "label": "What is your webwolf domain?",
+                "initialValue": "webwolf.com",
+                "type": "text"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "webgoat/webgoat:latest",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "environment": [
+                "WEBGOAT_HOST={Context.WEBGOAT_HOST}",
+                "WEBWOLF_HOST={Context.WEBWOLF_HOST}"
+              ],
+            "labels": {
+                "cosmos-persistent-env": "WEBGOAT_HOST",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/WebGoat/logo/OWASP-300x298.webp"
+            },
+            "volumes": [
+                {
+                  "source": "{ServiceName}-openvas",
+                  "target": "/data",
+                  "type": "volume"
+                }
+              ],
+            "routes": [{
+                "name": "{ServiceName}-webgoat",
+                "description": "Expose webgoat to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            },
+            {
+                "name": "{ServiceName}-webwolf",
+                "description": "Expose webwolf to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:9090",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}

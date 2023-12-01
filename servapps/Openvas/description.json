@@ -1,0 +1,9 @@
+{
+    "name": "Openvas",
+    "longDescription": "<p>OpenVAS is a full-featured vulnerability scanner. Its capabilities include unauthenticated and authenticated testing, various high-level and low-level internet and industrial protocols, performance tuning for large-scale scans and a powerful internal programming language to implement any type of vulnerability test</p>",
+    "description": "OpenVAS is the scanner component of Greenbone Vulnerability Management, a software framework of several services and tools offering vulnerability scanning and vulnerability management.",
+    "tags": ["Openvas", "auto", "browser", "vul", "self-hosted", "linux"],
+    "repository": "https://immauss.github.io/openvas/",
+    "image": "https://hub.docker.com/r/immauss/openvas/",
+    "supported_architectures": ["amd64", "arm64"]
+}
