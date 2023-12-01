@@ -10,7 +10,7 @@
             ],
             "environment": [
                 "NODE_ENV=production",
-                "DB_HOST={ServiceName}-mongo"
+                "DB_HOST={ServiceName}-mongo",
                 "DB_USER=lynx",
                 "DB_PORT=27017",
                 "DB_PASSWORD={Passwords.0}",
