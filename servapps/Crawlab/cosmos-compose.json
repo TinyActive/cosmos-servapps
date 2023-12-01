@@ -1,0 +1,109 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "crawlabteam/crawlab:latest",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "environment": [
+                "CRAWLAB_NODE_MASTER=Y",
+                "CRAWLAB_MONGO_HOST={ServiceName}-mongo"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID, TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Crawlab/logo/cover.jpg"
+            },
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-crawlab",
+                "target": "/root/.crawlab",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-worker01": {
+            "image": "crawlabteam/crawlab:latest",
+            "container_name": "{ServiceName}-worker01",
+            "environment": [
+                "CRAWLAB_NODE_MASTER=N",
+                "CRAWLAB_GRPC_ADDRESS={ServiceName}",
+                "CRAWLAB_FS_FILER_URL=http://{ServiceName}:8080/api/filer"
+            ],
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-worker01",
+                "target": "/root/.crawlab",
+                "type": "volume"
+            }],
+
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-worker02": {
+            "image": "crawlabteam/crawlab:latest",
+            "container_name": "{ServiceName}-worker02",
+            "environment": [
+                "CRAWLAB_NODE_MASTER=N",
+                "CRAWLAB_GRPC_ADDRESS={ServiceName}",
+                "CRAWLAB_FS_FILER_URL=http://{ServiceName}:8080/api/filer"
+            ],
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-worker02",
+                "target": "/root/.crawlab",
+                "type": "volume"
+            }],
+
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-mongo": {
+            "image": "mongo:4.2",
+            "container_name": "{ServiceName}-mongo",
+            "hostname": "{ServiceName}-mongo",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "stop_grace_period": 5,
+            "security_opt": [
+                "seccomp:unconfined",
+                "apparmor:unconfined"
+            ],
+            "volumes": [{
+                "source": "{ServiceName}-db-data",
+                "target": "/data/db",
+                "type": "volume"
+            }],
+            "labels": {
+                "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
+            }
+        }
+    },
+
+    "networks": {
+        "{ServiceName}-mongo": {}
+    }
+}

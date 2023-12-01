@@ -1,0 +1,9 @@
+{
+    "name": "Crawlab",
+    "longDescription": "<p>Crawlab is a powerful Web Crawler Management Platform (WCMP) that can run web crawlers and spiders developed in various programming languages including Python, Go, Node.js, Java, C# as well as frameworks including Scrapy, Colly, Selenium, Puppeteer. It is used for running, managing and monitoring web crawlers, particularly in production environment where traceability, scalability and stability are the major factors to concern.</p>",
+    "description": "Crawlab is a powerful Web Crawler Management Platform (WCMP) that can run web crawlers and spiders developed in various programming languages.",
+    "tags": ["Crawlab", "url", "Crawl", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/crawlab-team/crawlab/",
+    "image": "https://hub.docker.com/r/crawlabteam/crawlab/",
+    "supported_architectures": ["amd64"]
+}
