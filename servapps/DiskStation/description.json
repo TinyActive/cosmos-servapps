@@ -1,7 +1,7 @@
 {
     "name": "DiskStation",
     "longDescription": "<p>Synology DiskStation Manager (DSM) is the intuitive operating system that powers every Synology NAS. Let us organize and protect your data so you can focus on what you do best.</p>",
-    "description": "Centralize data storage and backup, streamline file collaboration, optimize video management, and secure network deployment to facilitate data management.",
+    "description": "Synology DiskStation Centralize data storage and backup, streamline file collaboration, optimize video management, and secure network deployment to facilitate data management.",
     "tags": ["DiskStation", "DSM", "synology", "self-hosted", "nas", "linux"],
     "repository": "https://github.com/vdsm/virtual-dsm/",
     "image": "https://hub.docker.com/r/vdsm/virtual-dsm",
