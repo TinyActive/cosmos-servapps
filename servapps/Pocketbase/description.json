@@ -1,0 +1,9 @@
+{
+    "name": "PocketBase",
+    "longDescription": "<p>PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.</p>",
+    "description": "PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API.",
+    "tags": ["PocketBase", "API", "open-source", "self-hosted", "linux", "SQLite"],
+    "repository": "https://ghcr.io/muchobien/pocketbase/",
+    "image": "https://ghcr.io/muchobien/pocketbase/",
+    "supported_architectures": ["amd64", "arm64"]
+}
