@@ -54,6 +54,7 @@ add this infomation and save
 | [ThingsBoard](https://thingsboard.io/docs/user-guide/install/docker)   | ThingsBoard is an open-source IoT platform that enables rapid development, management, and scaling of IoT projects. Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications | 
 | [PocketBase](https://ghcr.io/muchobien/pocketbase) | PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API |
 | [Webgoat](https://github.com/WebGoat/WebGoat) | WebGoat is a deliberately insecure web application maintained by OWASP designed to teach web application security lessons |
+| [Thelounge](https://ghcr.io/thelounge/thelounge) | The Lounge is a progressive web app (PWA), and can be installed from any modern browser for a native-like experience without having a dedicated app |
 
 
 ### Apps Next Support List

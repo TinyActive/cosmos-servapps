@@ -1,0 +1,9 @@
+{
+    "name": "Thelounge",
+    "longDescription": "<p>The Lounge is a progressive web app (PWA), and can be installed from any modern browser for a native-like experience without having a dedicated app.</p>",
+    "description": "The Lounge is a progressive web app (PWA), and can be installed from any modern browser for a native-like experience without having a dedicated app.",
+    "tags": ["chat", "IRC", "PWA", "open-source", "self-hosted", "linux", "thelounge"],
+    "repository": "https://ghcr.io/thelounge/thelounge/",
+    "image": "https://ghcr.io/thelounge/thelounge/",
+    "supported_architectures": ["amd64", "arm64"]
+}
