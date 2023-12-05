@@ -53,6 +53,8 @@ add this infomation and save
 | [Crawlab](https://github.com/crawlab-team/crawlab)   | Crawlab is a powerful Web Crawler Management Platform (WCMP) that can run web crawlers and spiders developed in various programming languages | 
 | [ThingsBoard](https://thingsboard.io/docs/user-guide/install/docker)   | ThingsBoard is an open-source IoT platform that enables rapid development, management, and scaling of IoT projects. Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications | 
 | [PocketBase](https://ghcr.io/muchobien/pocketbase) | PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API |
+| [Webgoat](https://github.com/WebGoat/WebGoat) | WebGoat is a deliberately insecure web application maintained by OWASP designed to teach web application security lessons |
+
 
 ### Apps Next Support List
 | Name         | Description                 |
