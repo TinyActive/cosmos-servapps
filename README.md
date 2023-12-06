@@ -55,6 +55,8 @@ add this infomation and save
 | [PocketBase](https://ghcr.io/muchobien/pocketbase) | PocketBase is an open source backend consisting of embedded database (SQLite) with realtime subscriptions, built-in auth management, convenient dashboard UI and simple REST-ish API |
 | [Webgoat](https://github.com/WebGoat/WebGoat) | WebGoat is a deliberately insecure web application maintained by OWASP designed to teach web application security lessons |
 | [Thelounge](https://ghcr.io/thelounge/thelounge) | The Lounge is a progressive web app (PWA), and can be installed from any modern browser for a native-like experience without having a dedicated app |
+| [Trilium](https://github.com/zadam/trilium) | Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases |
+| [Umami](https://github.com/umami-software/umami) | Umami is a simple, fast, privacy-focused, open-source analytics solution. Umami is a better alternative to Google Analytics because it gives you total control of your data and does not violate the privacy of your users |
 
 
 ### Apps Next Support List
