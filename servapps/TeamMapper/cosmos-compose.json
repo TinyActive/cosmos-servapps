@@ -29,17 +29,6 @@
             "networks": {
                 "{ServiceName}-postgres": {}
             },
-            "volumes": [{
-                    "source": "{ServiceName}-confluence_data",
-                    "target": "/var/confluence",
-                    "type": "volume"
-                },
-                {
-                    "source": "{ServiceName}-confluence_conf",
-                    "target": "/opt/confluence/conf/",
-                    "type": "volume"
-                }
-            ],
             "routes": [{
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",
