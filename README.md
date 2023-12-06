@@ -57,7 +57,7 @@ add this infomation and save
 | [Thelounge](https://ghcr.io/thelounge/thelounge) | The Lounge is a progressive web app (PWA), and can be installed from any modern browser for a native-like experience without having a dedicated app |
 | [Trilium](https://github.com/zadam/trilium) | Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases |
 | [Umami](https://github.com/umami-software/umami) | Umami is a simple, fast, privacy-focused, open-source analytics solution. Umami is a better alternative to Google Analytics because it gives you total control of your data and does not violate the privacy of your users |
-
+| [Tasks.md](https://github.com/BaldissaraMatheus/Tasks.md) | Tasks.md A self-hosted, file based task management board that supports Markdown syntax |
 
 ### Apps Next Support List
 | Name         | Description                 |
