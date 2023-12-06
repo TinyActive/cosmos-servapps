@@ -1,0 +1,9 @@
+{
+    "name": "Trilium",
+    "longDescription": "<p>Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases.</p>",
+    "description": "Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases.",
+    "tags": ["note", "knowledge", "hierarchical", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/zadam/trilium/",
+    "image": "https://hub.docker.com/r/zadam/trilium/",
+    "supported_architectures": ["amd64", "arm64"]
+}
