@@ -1,0 +1,93 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/trudesk",
+            "container_name": "{ServiceName}",
+            "environment": [
+                "NODE_ENV=production",
+                "TRUDESK_DOCKER=true",
+                "TD_MONGODB_SERVER={ServiceName}-mongo",
+                "TD_MONGODB_DATABASE=trudesk",
+                "USE_XFORWARDIP=true"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Lynx/logo/icon.png"
+            },
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-trudesk_uploads",
+                    "target": "/usr/src/trudesk/public/uploads",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-trudesk_backups",
+                    "target": "/usr/src/trudesk/backups",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8118",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-mongo": {
+            "image": "mongo:5.0-focal",
+            "container_name": "{ServiceName}-mongo",
+            "hostname": "{ServiceName}-mongo",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-mongo": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-db-data",
+                "target": "/data/db",
+                "type": "volume"
+            }]
+        },
+        "{ServiceName}-elasticsearch": {
+            "container_name": "{ServiceName}-elasticsearch",
+            "image": "elasticsearch:8.0.0",
+            "restart": "always",
+            "environment": [
+                "xpack.security.enabled=false",
+                "xpack.security.http.ssl.enabled=false",
+                "discovery.type=single-node",
+                "bootstrap.memory_lock=true"
+            ],
+            "mem_limit": 1073741824,
+            "ulimits": {
+                "memlock": {
+                    "soft": -1,
+                    "hard": -1
+                }
+            },
+            "volumes": [{
+                "source": "{ServiceName}-elasticsearch",
+                "target": "/usr/share/elasticsearch/data",
+                "type": "volume"
+            }]
+        }
+    },
+
+    "networks": {
+        "{ServiceName}-mongo": {}
+    }
+}
