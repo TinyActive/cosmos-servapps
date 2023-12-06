@@ -58,7 +58,7 @@ add this infomation and save
 | [Trilium](https://github.com/zadam/trilium) | Trilium Notes is a hierarchical note taking application with focus on building large personal knowledge bases |
 | [Umami](https://github.com/umami-software/umami) | Umami is a simple, fast, privacy-focused, open-source analytics solution. Umami is a better alternative to Google Analytics because it gives you total control of your data and does not violate the privacy of your users |
 | [Tasks.md](https://github.com/BaldissaraMatheus/Tasks.md) | Tasks.md A self-hosted, file based task management board that supports Markdown syntax |
-
+| [TeamMapper](https://github.com/Leak-VN/teammapper) | TeamMapper is based on mindmapp. In contrast to mindmapp, TeamMapper features shared mindmapping sessions for your team based on websockets |
 ### Apps Next Support List
 | Name         | Description                 |
 | ------------ | --------------------------- |

@@ -1,0 +1,9 @@
+{
+    "name": "TeamMapper",
+    "longDescription": "<p>TeamMapper is based on mindmapp. In contrast to mindmapp, TeamMapper features shared mindmapping sessions for your team based on websockets</p>",
+    "description": "Mindmapping made simple: Host and create your own mindmaps. Share your mindmap sessions with your team and collaborate on mindmaps.",
+    "tags": ["Tasks", "management", "Markdown", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/Leak-VN/teammapper/",
+    "image": "https://hub.docker.com/r/vouu/teammapper/",
+    "supported_architectures": ["amd64", "arm64"]
+}
