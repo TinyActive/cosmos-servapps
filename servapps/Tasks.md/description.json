@@ -1,0 +1,9 @@
+{
+    "name": "Tasks.md",
+    "longDescription": "<p>Tasks.md A self-hosted, file based task management board that supports Markdown syntax.</p>",
+    "description": "A self-hosted, file based task management board that supports Markdown syntax.",
+    "tags": ["Tasks", "management", "Markdown", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/BaldissaraMatheus/Tasks.md/",
+    "image": "https://hub.docker.com/r/baldissaramatheus/tasks.md/",
+    "supported_architectures": ["amd64", "arm64"]
+}
