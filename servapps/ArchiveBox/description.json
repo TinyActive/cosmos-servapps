@@ -1,0 +1,9 @@
+{
+    "name": "ArchiveBox",
+    "longDescription": "<p>ArchiveBox is an open source tool that helps you archive web content on your own (or privately within an organization): save copies of browser bookmarks, preserve evidence for legal cases, backup photos from FB / Insta / Flickr, download your media from YT / Soundcloud / etc., snapshot research papers & academic citations, and more.</p>",
+    "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view websites offline.",
+    "tags": ["ArchiveBox", "Archive", "save", "website", "self-hosted", "linux"],
+    "repository": "https://github.com/ArchiveBox/ArchiveBox/",
+    "image": "https://hub.docker.com/r/archivebox/archivebox/",
+    "supported_architectures": ["amd64", "arm64"]
+}

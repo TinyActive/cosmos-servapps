@@ -27,6 +27,7 @@ add this infomation and save
 | ------------ | --------------------------- |
 | [2fauth](https://github.com/Bubka/2FAuth)       | 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop | 
 | [Acunetix](https://www.acunetix.com/)       | Acunetix is an end-to-end web security scanner that offers a 360 view of an organization's security | 
+| [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox/)       | ArchiveBox is an open source tool that helps you archive web content on your own (or privately within an organization): save copies of browser bookmarks, preserve evidence for legal cases, backup photos from FB / Insta / Flickr, download your media from YT / Soundcloud / etc., snapshot research papers & academic citations, and more | 
 | [Ansible-semaphore](https://github.com/ansible-semaphore/semaphore)   | Ansible Semaphore is a modern UI for Ansible | 
 | [Browserless](https://github.com/browserless/browserless)   | The docker image that powers the core of browserless is available for free for open-source projects. Using it is about as simple as using the browserless service itself with the only difference being that you'll have to launch and manage the infrastructure | 
 | [CTFD](https://github.com/CTFd/CTFd)   | CTFd is a Capture The Flag framework focusing on ease of use and customizability. It comes with everything you need to run a CTF and it's easy to customize with plugins and themes | 
