@@ -1,0 +1,9 @@
+{
+    "name": "Answer",
+    "longDescription": "<p>Apache Answer A Q&A platform software for teams at any scales. Whether it’s a community forum, help center, or knowledge management platform, you can always count on Answer.</p>",
+    "description": "Apache Answer A Q&A platform software for teams at any scales. Whether it’s a community forum, help center, or knowledge management platform, you can always count on Answer.",
+    "tags": ["Chromium", "Chrome", "browser", "open-source", "self-hosted", "linux"],
+    "repository": "https://github.com/apache/incubator-answer/",
+    "image": "https://hub.docker.com/r/apache/answer/",
+    "supported_architectures": ["amd64", "arm64"]
+}
