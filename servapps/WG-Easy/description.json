@@ -1,0 +1,9 @@
+{
+    "name": "WireGuard Easy",
+    "longDescription": "WireGuard Easy is a tool for easily setting up WireGuard VPNs. It simplifies the process of configuring and managing WireGuard VPNs by providing a user-friendly interface. WireGuard Easy allows users to quickly create and manage WireGuard configurations, making it simpler to set up secure VPN connections.",
+    "description": "WG Easy simplifies the setup and management of WireGuard VPNs with a user-friendly interface.",
+    "tags": ["WireGuard", "VPN", "networking", "management"],
+    "repository": "https://github.com/wg-easy/wg-easy",
+    "image": "https://hub.docker.com/r/weejewel/wg-easy",
+    "supported_architectures": ["amd64", "arm64"]
+}
