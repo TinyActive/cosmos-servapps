@@ -1,0 +1,9 @@
+{
+    "name": "Wastebin",
+    "longDescription": "<p>Wastebin is a website where you can store code/text online for a set period of time and share to anybody on earth.</p>",
+    "description": "Wastebin is a website where you can store code/text online for a set period of time and share to anybody on earth.",
+    "tags": ["note", "Wastebin", "code", "Pastebin", "self-hosted", "linux"],
+    "repository": "https://github.com/Leak-VN/wastebin/",
+    "image": "https://hub.docker.com/r/vouu/wastebin",
+    "supported_architectures": ["amd64", "arm64"]
+}
