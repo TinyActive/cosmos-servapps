@@ -1,0 +1,65 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "ghcr.io/enchant97/hasty-paste",
+            "container_name": "{ServiceName}",
+            "networks": {
+                "{ServiceName}-redis": {}
+            },
+            "environment": [
+                "CACHE__REDIS_URI=redis://{ServiceName}-redis:6379",
+                "TIME_ZONE=Etc/UTC"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "CACHE__REDIS_URI, TIME_ZONE",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Hasty-Paste/logo/icon.svg"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-data",
+                "target": "/app/data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-redis": {
+            "image": "bitnami/redis:7.0",
+            "container_name": "{ServiceName}-redis",
+            "hostname": "{ServiceName}-redis",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-redis": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-redis",
+                "target": "/bitnami/redis",
+                "type": "volume"
+            }],
+            "labels": {
+                "cosmos-persistent-env": "REDIS_PASSWORD"
+            },
+            "environment": [
+                "ALLOW_EMPTY_PASSWORD=yes"
+            ]
+        }
+    },
+    "networks": {
+        "{ServiceName}-redis": {}
+    }
+}
