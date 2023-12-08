@@ -1,0 +1,57 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "ZO_ROOT_USER_EMAIL",
+                "label": "What is your openobserve email login?",
+                "initialValue": "openobserve@manhtuong.net",
+                "type": "text"
+            },
+            {
+                "name": "ZO_ROOT_USER_PASSWORD",
+                "label": "What openobserve password does it use?",
+                "initialValue": "openobserve",
+                "type": "password"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "public.ecr.aws/zinclabs/openobserve:latest",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "environment": [
+                "ZO_ROOT_USER_EMAIL={Context.ZO_ROOT_USER_EMAIL}",
+                "ZO_ROOT_USER_PASSWORD={Context.ZO_ROOT_USER_PASSWORD}"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID, TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Openobserve/logo/Wp6HKCpz_400x400.jpg"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-data",
+                "target": "/data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:5080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}
