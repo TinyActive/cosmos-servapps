@@ -61,7 +61,7 @@ add this infomation and save
 | [Umami](https://github.com/umami-software/umami) | Umami is a simple, fast, privacy-focused, open-source analytics solution. Umami is a better alternative to Google Analytics because it gives you total control of your data and does not violate the privacy of your users |
 | [Tasks.md](https://github.com/BaldissaraMatheus/Tasks.md) | Tasks.md A self-hosted, file based task management board that supports Markdown syntax |
 | [TeamMapper](https://github.com/Leak-VN/teammapper) | TeamMapper is based on mindmapp. In contrast to mindmapp, TeamMapper features shared mindmapping sessions for your team based on websockets |
-| [Openobserve](https://github.com/openobserve/openobserve) | OpenObserve is currently in alpha, but don't let that stop you from trying it out. We have done extensive internal testing, but are looking for external feedback before we put the label of GA (Generally Available) |
+| [Openobserve](https://github.com/openobserve/openobserve) | OpenObserve is a cloud native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale.|
 
 ### Apps Next Support List
 | Name         | Description                 |
