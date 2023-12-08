@@ -62,6 +62,7 @@ add this infomation and save
 | [Tasks.md](https://github.com/BaldissaraMatheus/Tasks.md) | Tasks.md A self-hosted, file based task management board that supports Markdown syntax |
 | [TeamMapper](https://github.com/Leak-VN/teammapper) | TeamMapper is based on mindmapp. In contrast to mindmapp, TeamMapper features shared mindmapping sessions for your team based on websockets |
 | [Openobserve](https://github.com/openobserve/openobserve) | OpenObserve is a cloud native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale.|
+| [Bin-pastebin](https://github.com/Leak-VN/bin) | A minimal pastebin which also accepts binary files like Images, PDFs and ships multiple clients. It does not require you to host a SQL server and everything is self-contained in a statically linked binary (the docker image runs on scratch !), which makes it extremely easy to deploy.|
 
 ### Apps Next Support List
 | Name         | Description                 |
