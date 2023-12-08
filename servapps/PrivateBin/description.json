@@ -1,0 +1,9 @@
+{
+    "name": "PrivateBin",
+    "longDescription": "<p>PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted / decrypted in the browser using 256bit AES in Galois Counter mode.</p>",
+    "description": "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data.",
+    "tags": ["pastebin", "note", "code", "share", "self-hosted", "linux", "file-upload", "file"],
+    "repository": "https://github.com/PrivateBin/PrivateBin/",
+    "image": "https://hub.docker.com/r/privatebin/nginx-fpm-alpine",
+    "supported_architectures": ["amd64", "arm64"]
+}

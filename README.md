@@ -63,6 +63,8 @@ add this infomation and save
 | [TeamMapper](https://github.com/Leak-VN/teammapper) | TeamMapper is based on mindmapp. In contrast to mindmapp, TeamMapper features shared mindmapping sessions for your team based on websockets |
 | [Openobserve](https://github.com/openobserve/openobserve) | OpenObserve is a cloud native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale.|
 | [Bin-pastebin](https://github.com/Leak-VN/bin) | A minimal pastebin which also accepts binary files like Images, PDFs and ships multiple clients. It does not require you to host a SQL server and everything is self-contained in a statically linked binary (the docker image runs on scratch !), which makes it extremely easy to deploy.|
+| [PrivateBin](https://github.com/PrivateBin/PrivateBin) | PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted / decrypted in the browser using 256bit AES in Galois Counter mode.|
+
 
 ### Apps Next Support List
 | Name         | Description                 |
