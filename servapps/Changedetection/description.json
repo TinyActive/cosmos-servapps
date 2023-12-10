@@ -1,0 +1,9 @@
+{
+    "name": "Changedetection",
+    "longDescription": "<p>Detect website content changes and perform meaningful actions - trigger notifications via Discord, Email, Slack, Telegram, API calls and many more.</p>",
+    "description": "Detect website content changes and perform meaningful actions - trigger notifications via Discord, Email, Slack, Telegram, API calls and many more.",
+    "tags": ["Appsmith", "database", "admin", "approval", "development", "software"],
+    "repository": "https://github.com/dgtlmoon/changedetection.io",
+    "image": "https://ghcr.io/dgtlmoon/changedetection.io",
+    "supported_architectures": ["amd64", "arm64"]
+}
