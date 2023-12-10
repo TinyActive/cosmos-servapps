@@ -1,0 +1,9 @@
+{
+    "name": "Appsmith",
+    "longDescription": "<p>Organizations build internal applications such as dashboards, database GUIs, admin panels, approval apps, customer support dashboards, and more to help their teams perform day-to-day operations. Appsmith is an open-source tool that enables the rapid development of these internal apps.</p>",
+    "description": "Thousands of engineers are using Appsmith to build custom software on top of their data. Technical users can quickly build, deploy, and share applications with end-users to run critical business operations.",
+    "tags": ["Appsmith", "database", "admin", "approval", "development", "software"],
+    "repository": "https://github.com/appsmithorg/appsmith/",
+    "image": "https://hub.docker.com/r/appsmith/appsmith-ee/",
+    "supported_architectures": ["amd64", "arm64"]
+}
