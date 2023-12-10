@@ -5,5 +5,5 @@
     "tags": ["ActiveWorkflow", "workflows", "workflow", "platform", "software", "engineers"],
     "repository": "https://github.com/automaticmode/active_workflow/",
     "image": "https://hub.docker.com/r/automaticmode/active_workflow/",
-    "supported_architectures": ["amd64", "arm64"]
+    "supported_architectures": ["amd64"]
 }
