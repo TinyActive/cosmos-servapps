@@ -1,0 +1,9 @@
+{
+    "name": "Coder",
+    "longDescription": "<p>Coder shifts software development from local machines to the cloud. Onboard new developers in minutes, build code on powerful servers—all while keeping source code and data secure behind your firewall.</p>",
+    "description": "Coder shifts software development from local machines to the cloud. Onboard new developers in minutes, build code on powerful servers—all while keeping source code and data secure behind your firewall.",
+    "tags": ["Coder", "development", "powerful", "code", "secure", "linux"],
+    "repository": "https://github.com/coder/coder/",
+    "image": "https://ghcr.io/coder/coder/",
+    "supported_architectures": ["amd64", "arm64"]
+}
