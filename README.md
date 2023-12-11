@@ -41,6 +41,7 @@ add this infomation and save
 | [Cloudbeaver](https://github.com/dbeaver/cloudbeaver)   | CloudBeaver is a web server which provides rich web interface. Server itself is a Java application, web part is written on TypeScript and React | 
 | [Confluence](https://github.com/vncloudsco/confluence)   | Confluence is your remote-friendly team workspace where knowledge and collaboration meet | 
 | [DiskStation](https://github.com/vdsm/virtual-dsm)   | Synology DiskStation Manager (DSM) is the intuitive operating system that powers every Synology NAS. Let us organize and protect your data so you can focus on what you do best | 
+| [Docat](https://github.com/Leak-VN/docat)   | Docat is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper | 
 | [FireFox](https://github.com/linuxserver/docker-FireFox)   | FireFox is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web | 
 | [Forgejo](https://codeberg.org/forgejo/forgejo)   | Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job | 
 | [Hedgedoc](https://github.com/linuxserver/docker-hedgedoc)   | HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor | 
