@@ -1,0 +1,9 @@
+{
+    "name": "Changedetection",
+    "longDescription": "<p>Changedetection.io is a fully opensource project, we rely on and financially support the libraries that we build on. Our vision is to be the most dynamic and feature-filled website change detection, notification and restock alert system, this can only be done with the help of the opensource community.</p>",
+    "description": "Changedetection.io is a fully opensource project, we rely on and financially support the libraries that we build on. Our vision is to be the most dynamic and feature-filled website change detection, notification and restock alert system, this can only be done with the help of the opensource community.",
+    "tags": ["Appsmith", "database", "admin", "approval", "development", "software"],
+    "repository": "https://github.com/dgtlmoon/changedetection.io",
+    "image": "https://ghcr.io/dgtlmoon/changedetection.io",
+    "supported_architectures": ["amd64", "arm64"]
+}

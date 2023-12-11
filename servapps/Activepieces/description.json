@@ -1,0 +1,9 @@
+{
+    "name": "Activepieces",
+    "longDescription": "<p>Activepieces is a relatively new no-code workflow automation tool that allows users to set up workflows to streamline repetitive tasks. This Activepieces review will provide an in-depth look at the platform's features, use cases, pricing, support, and more to help you determine if it's the right automation solution for your needs.</p>",
+    "description": "Activepieces is a cloud-based platform that aims to make workflow automation accessible for everyone, even those without coding skills.",
+    "tags": ["Activepieces", "trello", "workflow", "automation", "streamline", "tasks"],
+    "repository": "https://github.com/activepieces/activepieces/",
+    "image": "https://hub.docker.com/r/activepieces/activepieces/",
+    "supported_architectures": ["amd64", "arm64"]
+}

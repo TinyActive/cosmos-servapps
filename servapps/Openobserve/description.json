@@ -1,7 +1,7 @@
 {
     "name": "Openobserve",
     "longDescription": "<p>OpenObserve is a cloud native observability platform (Logs, Metrics, Traces) that provides ~140x lower storage costs (compared to Elasticsearch. YMMV. Could be higher or lower based on data entropy) for real life log data, significantly lower operational cost and ease of use. It can scale to petabytes of data, is highly performant and allows you to sleep better at night.</p>",
-    "description": "OpenObserve is currently in alpha, but don't let that stop you from trying it out. We have done extensive internal testing, but are looking for external feedback before we put the label of GA (Generally Available).",
+    "description": "OpenObserve is a cloud native observability platform built specifically for logs, metrics, traces, analytics, RUM (Real User Monitoring - Performance, Errors, Session Replay) designed to work at petabyte scale",
     "tags": ["Openobserve", "log", "kibana", "open-source", "self-hosted", "linux"],
     "repository": "https://openobserve.ai/docs/quickstart/",
     "image": "https://gallery.ecr.aws/zinclabs/openobserve/",

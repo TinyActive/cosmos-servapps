@@ -1,0 +1,9 @@
+{
+    "name": "Bin-pastebin",
+    "longDescription": "<p>A minimal pastebin which also accepts binary files like Images, PDFs and ships multiple clients. It does not require you to host a SQL server and everything is self-contained in a statically linked binary (the docker image runs on scratch !), which makes it extremely easy to deploy.</p>",
+    "description": "A minimal pastebin which also accepts binary files like Images, PDFs and ships multiple clients.",
+    "tags": ["pastebin", "note", "code", "share", "self-hosted", "linux", "file-upload", "file"],
+    "repository": "https://github.com/Leak-VN/bin/",
+    "image": "https://hub.docker.com/r/vouu/bin-pastebin",
+    "supported_architectures": ["amd64", "arm64"]
+}

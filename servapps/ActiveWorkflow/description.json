@@ -1,0 +1,9 @@
+{
+    "name": "ActiveWorkflow",
+    "longDescription": "<p>ActiveWorkflow works alongside your existing technology stack to give you an easy and structured way to: Group business logic for periodic execution, Poll resources, Orchestrate event-driven functionality. You can do all of the above by creating, scheduling, and monitoring workflows of agents, which are self-contained services (or microservices) written in any programming language you choose. ActiveWorkflow gives you a simple way to connect agents to form workflows, extensive logging, state management so that you don't have to worry about a database, and a foundation for scalability and reliability.</p>",
+    "description": "ActiveWorkflow is not a no-code platform, but it does offer a fully featured UI so that both software engineers and other stakeholders can manage and monitor workflows.",
+    "tags": ["ActiveWorkflow", "workflows", "workflow", "platform", "software", "engineers"],
+    "repository": "https://github.com/automaticmode/active_workflow/",
+    "image": "https://hub.docker.com/r/automaticmode/active_workflow/",
+    "supported_architectures": ["amd64"]
+}
