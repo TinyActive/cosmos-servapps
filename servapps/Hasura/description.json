@@ -1,0 +1,9 @@
+{
+    "name": "Hasura",
+    "longDescription": "<p>The Hasura GraphQL Engine makes your data instantly accessible over a GraphQL API, so you can build and ship modern, performant apps and APIs 10x faster. Hasura connects to your databases, REST and GraphQL endpoints, and third party APIs to provide a unified, connected, real-time, secured GraphQL API for all of your data. < /p>",
+    "description": "Hasura is an open-source product that accelerates API development by 10x by giving you GraphQL or REST APIs with built-in authorization on your data, instantly.",
+    "tags": ["Hasura", "management", "API", "data", "development", "REST APIs", "GraphQL", "endpoints"],
+    "repository": "https://github.com/hasura/graphql-engine/",
+    "image": "https://hub.docker.com/r/hasura/graphql-engine/",
+    "supported_architectures": ["amd64", "arm64"]
+}

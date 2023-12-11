@@ -1,0 +1,9 @@
+{
+    "name": "Docat",
+    "longDescription": "<p>Docat is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper. < /p>",
+    "description": "Docat is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+    "tags": ["document", "management", "organization", "archive", "collection", "paper"],
+    "repository": "https://github.com/Leak-VN/docat/",
+    "image": "https://hub.docker.com/r/vouu/docat/",
+    "supported_architectures": ["amd64", "arm64"]
+}
