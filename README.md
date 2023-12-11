@@ -45,6 +45,7 @@ add this infomation and save
 | [FireFox](https://github.com/linuxserver/docker-FireFox)   | FireFox is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web | 
 | [Forgejo](https://codeberg.org/forgejo/forgejo)   | Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job | 
 | [Hedgedoc](https://github.com/linuxserver/docker-hedgedoc)   | HedgeDoc (formerly known as CodiMD) is an open-source, web-based, self-hosted, collaborative markdown editor | 
+| [Hasura GraphQL Engine](https://github.com/hasura/graphql-engine)   | The Hasura GraphQL Engine makes your data instantly accessible over a GraphQL API, so you can build and ship modern, performant apps and APIs 10x faster. Hasura connects to your databases, REST and GraphQL endpoints, and third party APIs to provide a unified, connected, real-time, secured GraphQL API for all of your data | 
 | [Jira](https://github.com/vncloudsco/jira-install)   | Jira | 
 | [Koel](https://github.com/koel/docker)   | Koel (also stylized as koel, with a lowercase k) is a simple web-based personal audio streaming service | 
 | [Lynx](https://github.com/Lynx-Shortener/Lynx)   | Lynx is a URL shortener built using the MEVN stack with features such as multi-user support, ShareX integration and 2FA | 
