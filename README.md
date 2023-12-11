@@ -43,6 +43,7 @@ add this infomation and save
 | [Jira](https://github.com/vncloudsco/jira-install)   | Jira | 
 | [Koel](https://github.com/koel/docker)   | Koel (also stylized as koel, with a lowercase k) is a simple web-based personal audio streaming service | 
 | [Lynx](https://github.com/Lynx-Shortener/Lynx)   | Lynx is a URL shortener built using the MEVN stack with features such as multi-user support, ShareX integration and 2FA | 
+| [Listmonk](https://github.com/knadh/listmonk)   | listmonk is a self-hosted, high performance mailing list and newsletter manager. It comes as a standalone binary and the only dependency is a Postgres database | 
 | [Mattermost](https://github.com/mattermost/mattermost)   | Mattermost is an open-source, self-hostable online chat service with file sharing, search, and integrations. It is designed as an internal chat for organisations and companies, and mostly markets itself as an open-source alternative to Slack and Microsoft Teams | 
 | [PasswordPusher](https://github.com/pglombardo/PasswordPusher)   | Password Pusher is an opensource application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed | 
 | [Piwigo](https://github.com/linuxserver/docker-piwigo)   | Manage your photo library with Piwigo! Free and open source software to organize and share your photos and digital media on the web. | 

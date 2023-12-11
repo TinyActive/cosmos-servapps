@@ -1,0 +1,9 @@
+{
+    "name": "Listmonk",
+    "longDescription": "<p>listmonk is a self-hosted, high performance mailing list and newsletter manager. It comes as a standalone binary and the only dependency is a Postgres database.</p>",
+    "description": "listmonk is a self-hosted, high performance mailing list and newsletter manager. It comes as a standalone binary and the only dependency is a Postgres database.",
+    "tags": ["listmonk", "standalone", "newsletter", "mailing", "self-hosted", "linux", "Multi-threaded", "high-throughput"],
+    "repository": "https://github.com/knadh/listmonk/",
+    "image": "https://hub.docker.com/r/listmonk/listmonk/",
+    "supported_architectures": ["amd64", "arm64"]
+}
