@@ -7,19 +7,19 @@
         "form": [{
                 "name": "initial_user",
                 "label": "What is your Admin username?",
-                "initialValue": "contact@tinyactive.net",
+                "initialValue": "admin",
                 "type": "text"
             },
             {
                 "name": "initial_password",
                 "label": "What Admin password does it use?",
-                "initialValue": "smtp.gmail.com",
-                "type": "text"
+                "initialValue": "Q3K98sHzN6iUeTCXUFNu",
+                "type": "password"
             },
             {
                 "name": "initial_email",
                 "label": "What email admin does it use?",
-                "initialValue": "587",
+                "initialValue": "contact@manhtuong.net",
                 "type": "text"
             }
         ]
