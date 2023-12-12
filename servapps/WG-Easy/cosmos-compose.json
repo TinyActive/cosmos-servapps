@@ -1,0 +1,73 @@
+{
+    "cosmos-installer": {
+       "form": [
+          {
+             "name": "port",
+             "label": "You will need to open UDP port 51820 for this app",
+             "type": "warning"
+          },
+          {
+             "name": "host",
+             "label": "What ip do you wanna set? (put the route or put the server ip if domain is blocked)",
+             "initialValue": "192.168.1.1",
+             "type": "text"
+          },
+          {
+             "name": "password",
+             "label": "Set the password to use this app",
+             "type": "password",
+             "initialValue": ""
+          }
+       ]
+    },
+    "services": {
+       "{ServiceName}": {
+          "container_name": "{ServiceName}",
+          "image": "weejewel/wg-easy",
+          "environment": [
+             "WG_HOST={Context.host}",
+             "PASSWORD={Context.password}"
+          ],
+          "volumes": [
+             {
+                "source": "{ServiceName}-config",
+                "target": "/etc/wireguard",
+                "type": "volume"
+             }
+          ],
+          "ports": [
+             "51820:51820/udp"
+          ],
+          "cap_add": [
+             "NET_ADMIN",
+             "SYS_MODULE"
+          ],
+          "sysctls": [
+             "net.ipv4.conf.all.src_valid_mark=1",
+             "net.ipv4.ip_forward=1"
+          ],
+          "restart": "unless-stopped",
+          "labels": {
+             "cosmos-force-network-secured": "false",
+             "cosmos-auto-update": "true",
+             "cosmos-icon": "https://cosmos.manhtuong.net/servapps/WG-Easy/logo/icon.png",
+             "cosmos-persistent-env": "WG_HOST, PASSWORD"
+          },
+          "routes": [
+             {
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:51821",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                   "Enabled": true
+                }
+             }
+          ]
+       }
+    }
+ }
