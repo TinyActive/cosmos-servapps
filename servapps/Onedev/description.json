@@ -1,0 +1,9 @@
+{
+    "name": "OneDev",
+    "longDescription": "<p>OneDev is by multiple orders of magnitudes the very best CI/CD environment. Its minimal use of memory and processing resources stands in stark contrast.</p>",
+    "description": "OneDev is by multiple orders of magnitudes the very best CI/CD environment. Its minimal use of memory and processing resources stands in stark contrast.",
+    "tags": ["Coder", "development", "ci/cd", "code", "secure", "git", "ci", "cd", "build"],
+    "repository": "https://github.com/theonedev/onedev/",
+    "image": "https://hub.docker.com/r/1dev/server/",
+    "supported_architectures": ["amd64", "arm64"]
+}
