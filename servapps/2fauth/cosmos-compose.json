@@ -64,6 +64,9 @@
             "security_opt": [
                 "seccomp:unconfined"
             ],
+            "networks": {
+                "{ServiceName}-redis": {}
+            },
             "environment": [
                 "APP_NAME=2FAuth",
                 "APP_ENV=local",
@@ -147,7 +150,7 @@
             "hostname": "{ServiceName}-redis",
             "restart": "unless-stopped",
             "networks": {
-                "{ServiceName}-postgres": {}
+                "{ServiceName}-redis": {}
             },
             "volumes": [{
                 "source": "{ServiceName}-redis",
@@ -163,6 +166,6 @@
         }
     },
     "networks": {
-        "{ServiceName}-postgres": {}
+        "{ServiceName}-redis": {}
     }
 }
