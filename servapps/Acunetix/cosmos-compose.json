@@ -1,5 +1,10 @@
 {
-    "cosmos-installer": {},
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "After installation access follow user: admin@acu.com and Password: Passw0rd!"
+        }]
+    },
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
