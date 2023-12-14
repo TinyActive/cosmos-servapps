@@ -1,5 +1,10 @@
 {
-    "cosmos-installer": {},
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "After installation access follow https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}/app.html"
+        }]
+    },
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
