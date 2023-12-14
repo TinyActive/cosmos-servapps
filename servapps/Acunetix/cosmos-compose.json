@@ -14,10 +14,21 @@
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Acunetix/logo/0_lJTkWI1TOFW-dvkY.png"
             },
             "volumes": [{
-                "source": "{ServiceName}-config",
-                "target": "/config",
-                "type": "volume"
-            }],
+                    "source": "{ServiceName}-db",
+                    "target": "/home/acunetix/.acunetix/db",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-data",
+                    "target": "/home/acunetix/.acunetix/data",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-log",
+                    "target": "/home/acunetix/.acunetix/log",
+                    "type": "volume"
+                }
+            ],
             "routes": [{
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",

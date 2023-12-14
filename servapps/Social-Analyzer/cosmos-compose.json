@@ -1,0 +1,71 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/social-analyzer",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "networks": {
+                "{ServiceName}-hub": {}
+            },
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Social-Analyzer/logo/logo.jpg"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:9005",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "entrypoint": "npm start -- --docker --grid \"http: //{ServiceName}-hub:4444/wd/hub\"",
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-hub": {
+            "image": "seleniarm/hub",
+            "container_name": "{ServiceName}-hub",
+            "hostname": "{ServiceName}-hub",
+            "networks": {
+                "{ServiceName}-hub": {}
+            },
+            "environment": [
+                "GRID_MAX_SESSION=16",
+                "GRID_BROWSER_TIMEOUT=6000",
+                "GRID_TIMEOUT=6000"
+            ],
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-firefox": {
+            "image": "seleniarm/node-firefox",
+            "container_name": "{ServiceName}-firefox",
+            "hostname": "{ServiceName}-firefox",
+            "networks": {
+                "{ServiceName}-hub": {}
+            },
+            "environment": [
+                "SE_EVENT_BUS_HOST={ServiceName}-hub",
+                "SE_EVENT_BUS_PUBLISH_PORT=4442",
+                "SE_EVENT_BUS_SUBSCRIBE_PORT=4443",
+                "SE_NODE_MAX_SESSIONS=2"
+            ],
+            "volumes": [{
+                "source": "/dev/shm",
+                "target": "/dev/shm",
+                "type": "bind"
+            }],
+            "restart": "unless-stopped"
+        }
+    },
+    "networks": {
+        "{ServiceName}-hub": {}
+    }
+}
