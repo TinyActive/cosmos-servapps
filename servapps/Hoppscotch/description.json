@@ -1,0 +1,9 @@
+{
+    "name": "Hoppscotch",
+    "longDescription": "<p>Hoppscotch is a lightweight API development suite. Hoppscotch was built from the ground up with ease of use and accessibility in mind. Hoppscotch provides all the functionality needed for developers with a minimalist and unobtrusive UI. Hoppscotch community edition is free-to-use and as an added perk completely open source.</p>",
+    "description": "Hoppscotch is a lightweight API development suite. Hoppscotch was built from the ground up with ease of use and accessibility in mind.",
+    "tags": ["Hoppscotch", "api", "manager", "postman", "platform", "developers"],
+    "repository": "https://github.com/hoppscotch/hoppscotch/",
+    "image": "https://hub.docker.com/r/hoppscotch/hoppscotch/",
+    "supported_architectures": ["amd64", "arm64"]
+}
