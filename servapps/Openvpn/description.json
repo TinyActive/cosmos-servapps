@@ -1,0 +1,9 @@
+{
+    "name": "OpenVPN",
+    "longDescription": "<p>OpenVPN provides VPN server solutions for small to mid-size businesses. Use our trusted secure networking & vpn software today for a secure private network.</p>",
+    "description": "OpenVPN provides VPN server solutions for small to mid-size businesses. Use our trusted secure networking & vpn software today for a secure private network.",
+    "tags": ["OpenVPN", "vpn", "hiden network", "networking", "private network", "private"],
+    "repository": "https://github.com/d3vilh/openvpn-ui/",
+    "image": "https://hub.docker.com/r/d3vilh/openvpn-server/",
+    "supported_architectures": ["amd64", "arm64"]
+}

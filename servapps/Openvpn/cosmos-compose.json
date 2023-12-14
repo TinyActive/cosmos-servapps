@@ -1,0 +1,105 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "services": {
+        "{ServiceName}": {
+            "container_name": "{ServiceName}",
+            "hostname": "openvpn",
+            "image": "d3vilh/openvpn-server:latest",
+            "privileged": true,
+            "ports": [
+                "1194:1194/udp"
+            ],
+            "environment": [
+                "TRUST_SUB=10.0.70.0/24",
+                "GUEST_SUB=10.0.71.0/24",
+                "HOME_SUB=192.168.88.0/24"
+            ],
+            "volumes": [{
+                    "source": "{ServiceName}-pki",
+                    "target": "/etc/openvpn/pki",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-clients",
+                    "target": "/etc/openvpn/clients",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-config",
+                    "target": "/etc/openvpn/config",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-staticclients",
+                    "target": "/etc/openvpn/staticclients",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-log",
+                    "target": "/var/log/openvpn",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-app",
+                    "target": "/opt/app",
+                    "type": "volume"
+                }
+            ],
+            "cap_add": [
+                "NET_ADMIN"
+            ],
+            "restart": "always"
+        },
+        "{ServiceName}-ui": {
+            "container_name": "{ServiceName}-ui",
+            "image": "d3vilh/openvpn-ui:latest",
+            "environment": [
+                "OPENVPN_ADMIN_USERNAME=admin",
+                "OPENVPN_ADMIN_PASSWORD=gagaZush"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Openvpn/logo/icon.png"
+            },
+            "privileged": true,
+            "volumes": [{
+                    "source": "{ServiceName}-ui-usr",
+                    "target": "/etc/openvpn",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-ui-db",
+                    "target": "/opt/openvpn-ui/db",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-pki",
+                    "target": "/etc/openvpn/pki",
+                    "type": "volume"
+                },
+                {
+                    "source": "/var/run/docker.sock",
+                    "target": "/var/run/docker.sock",
+                    "type": "bind"
+                }
+            ],
+            "restart": "always",
+            "routes": [{
+                "name": "{ServiceName}-ui",
+                "description": "Expose {ServiceName}-ui to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}-ui:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        }
+    }
+}
