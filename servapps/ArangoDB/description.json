@@ -1,0 +1,9 @@
+{
+    "name": "ArangoDB",
+    "longDescription": "<p>ArangoDB is a scalable graph database system to drive value from connected data, faster. Native graphs, an integrated search engine, and JSON support, via a single query language. ArangoDB runs on-prem, in the cloud  anywhere.</p>",
+    "description": "ArangoDB is a scalable graph database system to drive value from connected data, faster. Native graphs, an integrated search engine, and JSON support, via a single query language. ArangoDB runs on-prem, in the cloud  anywhere.",
+    "tags": ["ArangoDB", "db", "scalable", "database", "Native", "integrated", "JSON"],
+    "repository": "https://github.com/arangodb/arangodb/",
+    "image": "https://hub.docker.com/_/arangodb/",
+    "supported_architectures": ["amd64", "arm64"]
+}
