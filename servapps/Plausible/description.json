@@ -1,0 +1,9 @@
+{
+    "name": "Plausible-Analytics",
+    "longDescription": "<p>Plausible Analytics is an easy to use, lightweight (< 1 KB), open source and privacy-friendly alternative to Google Analytics. It doesn’t use cookies and is fully compliant with GDPR, CCPA and PECR. You can self-host or have us run Plausible for you in the cloud. Here's the live demo of our own website stats.</p>",
+    "description": "Plausible Analytics is an easy to use, lightweight (< 1 KB), open source and privacy-friendly alternative to Google Analytics.",
+    "tags": ["Plausible", "Analytics", "privacy-friendly", "alternative", "Google Analytics", "linux"],
+    "repository": "https://github.com/plausible/analytics/",
+    "image": "https://github.com/plausible/hosting/",
+    "supported_architectures": ["amd64", "arm64"]
+}

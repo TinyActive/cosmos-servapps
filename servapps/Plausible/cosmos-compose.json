@@ -1,0 +1,166 @@
+{
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "warning",
+            "label": "After installation user CORS Everywhere access the admin page, CORS is a hoppscotch fixed bug they don't handle"
+        }],
+        "form": [{
+                "name": "MAIL_HOST",
+                "label": "What smtp domain does it use?",
+                "initialValue": "smtp.gmail.com",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_USERNAME",
+                "label": "What email user does it use?",
+                "initialValue": "contact@tinyactive.net",
+                "type": "text"
+            },
+            {
+                "name": "MAIL_PASSWORD",
+                "label": "What email password does it use?",
+                "initialValue": "fd4y3Sb4VnUbegrD",
+                "type": "password"
+            },
+
+            {
+                "name": "MAIL_FROM_NAME",
+                "label": "What email name does it use?",
+                "initialValue": "Tinyactive",
+                "type": "text"
+            },
+            {
+                "name": "SMTP_HOST_PORT",
+                "label": "What smtp port does it use?",
+                "initialValue": "Tinyactive",
+                "type": "text"
+            },
+            {
+                "name": "GOOGLE_CLIENT_ID",
+                "label": "Google Search Integration GOOGLE_CLIENT_ID?",
+                "initialValue": "57fca10e61eec59600",
+                "type": "text"
+            },
+            {
+                "name": "GOOGLE_CLIENT_SECRET",
+                "label": "Google Search Integration GOOGLE_CLIENT_SECRET?",
+                "initialValue": "57fca10e61eec59600",
+                "type": "text"
+            }
+
+        ]
+    },
+    "minVersion": "0.9.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "plausible/analytics",
+            "container_name": "{ServiceName}",
+            "restart": "unless-stopped",
+            "command": "sh -c \"sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run\"",
+            "environment": [
+                "BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
+                "PORT=8080",
+                "LISTEN_IP=0.0.0.0",
+                "SECRET_KEY_BASE=57fca10e61eec5960066cd84b469478734429bf726169110bd58ae55294388d58dd4cbb588630bf5e1ccb7224c9387d85b34b8b3463e5dda8ac05343a264ce80",
+                "DISABLE_REGISTRATION=invite_only",
+                "RELEASE_DISTRIBUTION=none",
+                "DATABASE_URL=postgres://plausible:{Passwords.0}@{ServiceName}-postgres:5432/plausible",
+                "CLICKHOUSE_DATABASE_URL=http://{ServiceName}-clickhouse:8123/plausible_events_db",
+                "CLICKHOUSE_FLUSH_INTERVAL_MS=5000",
+                "CLICKHOUSE_MAX_BUFFER_SIZE=10000",
+                "MAILER_EMAIL={Context.MAIL_USERNAME}",
+                "MAILER_NAME=analytics",
+                "SMTP_HOST_ADDR={Context.MAIL_HOST}",
+                "SMTP_HOST_PORT={Context.SMTP_HOST_PORT}",
+                "SMTP_USER_NAME={Context.MAIL_USERNAME}",
+                "SMTP_USER_PWD={Context.MAIL_PASSWORD}",
+                "SMTP_HOST_SSL_ENABLED=true",
+                "SMTP_RETRIES=2",
+                "GOOGLE_CLIENT_SECRET={Context.GOOGLE_CLIENT_SECRET}",
+                "GOOGLE_CLIENT_ID={Context.GOOGLE_CLIENT_ID}"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Plausible/logo/icon.png"
+            },
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-confluence_data",
+                    "target": "/var/confluence",
+                    "type": "volume"
+                },
+                {
+                    "source": "{ServiceName}-confluence_conf",
+                    "target": "/opt/confluence/conf/",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        },
+
+        "{ServiceName}-postgres": {
+            "image": "postgres:15-alpine",
+            "container_name": "{ServiceName}-postgres",
+            "hostname": "{ServiceName}-postgres",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "volumes": [{
+                "source": "{ServiceName}-event-data",
+                "target": "/var/lib/clickhouse",
+                "type": "volume"
+            }],
+            "labels": {
+                "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
+            },
+            "environment": [
+                "POSTGRES_DB=plausible",
+                "POSTGRES_USER=plausible",
+                "POSTGRES_PASSWORD={Passwords.0}"
+            ]
+        },        
+        "{ServiceName}-clickhouse": {
+            "image": "clickhouse/clickhouse-server",
+            "container_name": "{ServiceName}-clickhouse",
+            "hostname": "{ServiceName}-clickhouse",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "stop_grace_period": 5,
+            "security_opt": [
+                "seccomp:unconfined",
+                "apparmor:unconfined"
+            ],
+            "post_install": [
+                "rm -rf /etc/clickhouse-server/config.d/logging.xml /etc/clickhouse-server/users.d/logging.xml && wget -O /etc/clickhouse-server/config.d/logging.xml https://cosmos.manhtuong.net/servapps/Plausible/config/clickhouse-config.xml && wget -O /etc/clickhouse-server/users.d/logging.xml https://cosmos.manhtuong.net/servapps/Plausible/config/clickhouse-user-config.xml"
+            ],
+            "volumes": [{
+                "source": "{ServiceName}-postgres-data",
+                "target": "/var/lib/postgresql/data",
+                "type": "volume"
+            }]
+        }
+    },
+
+    "networks": {
+        "{ServiceName}-postgres": {}
+    }
+}
