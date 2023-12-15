@@ -1,0 +1,45 @@
+{
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "warning",
+            "label": "After installation access account: admin/admin123. Please change after logging in "
+        }]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "filegator/filegator:v7.9.2-multiarch",
+            "container_name": "{ServiceName}",
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/FileGator/logo/icon.png"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-repository",
+                "target": "/var/www/filegator/repository",
+                "type": "volume"
+            },
+            {
+                "source": "{ServiceName}-private",
+                "target": "/var/www/filegator/private",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}
