@@ -1,0 +1,47 @@
+{
+    "cosmos-installer": {
+      "post-install": [
+        {
+          "type": "warning",
+          "label": "The default port number for CockroachDB is 26257"
+        }
+      ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "cockroachdb/cockroach",
+            "container_name": "{ServiceName}",
+            "ports": [
+                "26257:26257"
+              ],
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/CockroachDB/logo/cockroachdb-logo-png-transparent.png"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-cockroach-data",
+                "target": "/cockroach/cockroach-data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                },
+                "AuthEnabled": true
+            }],
+            "command": "start-single-node --insecure",
+            "restart": "unless-stopped"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "CockroachDB",
+    "longDescription": "<p>CockroachDB is a distributed SQL database built on a transactional and strongly-consistent key-value store. It scales horizontally; survives disk, machine, rack, and even datacenter failures with minimal latency disruption and no manual intervention; supports strongly-consistent ACID transactions; and provides a familiar SQL API for structuring, manipulating, and querying data.</p>",
+    "description": "CockroachDB is a cloud-native distributed SQL database designed to build, scale, and manage modern, data-intensive applications.",
+    "tags": ["CockroachDB", "db", "SQL", "database", "transactional", "key-value"],
+    "repository": "https://github.com/cockroachdb/cockroach/",
+    "image": "https://hub.docker.com/r/cockroachdb/cockroach/",
+    "supported_architectures": ["amd64", "arm64"]
+}
