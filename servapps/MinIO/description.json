@@ -1,0 +1,9 @@
+{
+    "name": "MinIO",
+    "longDescription": "<p>MinIO is an object storage solution that provides an Amazon Web Services S3-compatible API and supports all core S3 features. MinIO is built to deploy anywhere - public or private cloud, baremetal infrastructure, orchestrated environments, and edge infrastructure.</p>",
+    "description": "MinIO is an object storage solution that provides an Amazon Web Services S3-compatible API and supports all core S3 features. MinIO is built to deploy anywhere - public or private cloud, baremetal infrastructure, orchestrated environments, and edge infrastructure.",
+    "tags": ["public", "private", "MinIO", "storage", "object storage", "infrastructure", "S3"],
+    "repository": "https://github.com/minio/minio/",
+    "image": "https://hub.docker.com/r/minio/minio/",
+    "supported_architectures": ["amd64", "arm64"]
+}

@@ -1,0 +1,50 @@
+{
+    "cosmos-installer": {
+      "post-install": [
+        {
+          "type": "warning",
+          "label": "The password admin: {Passwords.0} store it carefully"
+        }
+      ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "minio/minio",
+            "container_name": "{ServiceName}",
+            "command": "server /data --console-address :9090",
+            "ports": [
+                "9000:9000"
+             ],
+             "environment": [
+                "MINIO_ROOT_USER=admin",
+                "MINIO_ROOT_PASSWORD={Passwords.0}"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "MINIO_ROOT_PASSWORD",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/MinIO/logo/minio-logo.jpg"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-data",
+                "target": "/data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:9090",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,    
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}
