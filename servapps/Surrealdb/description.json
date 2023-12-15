@@ -1,0 +1,9 @@
+{
+    "name": "SurrealDB",
+    "longDescription": "<p>SurrealDB offers a dynamic and adaptable platform for business. With an integrated suite of cutting-edge database solutions, tools, and services, SurrealDB empowers your workforce to discover innovative answers using products meticulously crafted to meet their requirements.</p>",
+    "description": "SurrealDB offers a dynamic and adaptable platform for business. With an integrated suite of cutting-edge database solutions, tools, and services, SurrealDB empowers your workforce to discover innovative answers using products meticulously crafted to meet their requirements.",
+    "tags": ["SurrealDB", "dynamic", "adaptable", "platform", "cutting-edge database", "services"],
+    "repository": "https://github.com/surrealdb/surrealdb/",
+    "image": "https://hub.docker.com/r/surrealdb/surrealdb/",
+    "supported_architectures": ["amd64", "arm64"]
+}

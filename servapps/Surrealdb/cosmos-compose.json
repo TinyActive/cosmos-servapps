@@ -1,0 +1,37 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "surrealdb/surrealdb:latest",
+            "container_name": "{ServiceName}",
+            "user": "root",
+            "command": "start --user root --pass {Passwords.1} file:/data/database.db",
+            "labels": {
+                "cosmos-persistent-env": "",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Surrealdb/logo/1_0WNVU1HfJvNIGwkhG274Qw.png"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-data",
+                "target": "/data",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}
