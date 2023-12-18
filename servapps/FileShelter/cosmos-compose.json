@@ -1,0 +1,39 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "epoupon/fileshelter",
+            "container_name": "{ServiceName}",
+            "environment": [
+                "PUID=1000",
+                "PGID=1000"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/FileShelter/logo/icon.png"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-fileshelter",
+                "target": "/var/fileshelter",
+                "type": "volume"
+            }],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:5091",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}
