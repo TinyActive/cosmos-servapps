@@ -2,7 +2,7 @@
     "cosmos-installer": {
         "form": [{
                 "name": "URL_MAIN",
-                "label": "What is your fastapi router?",
+                "label": "What is your fastapi router download link?",
                 "initialValue": "https://cosmos.manhtuong.net/servapps/Fastapi/code/main.py",
                 "type": "text"
             }
