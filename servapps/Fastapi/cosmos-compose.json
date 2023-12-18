@@ -1,0 +1,50 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "URL_MAIN",
+                "label": "What is your fastapi router?",
+                "initialValue": "https://cosmos.manhtuong.net/servapps/Fastapi/code/main.py",
+                "type": "text"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/fastapi:latest",
+            "container_name": "{ServiceName}",
+            "environment": [
+                "PUID=1000",
+                "PGID=1000"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "PUID, PGID",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Fastapi/logo/fastapi.svg"
+            },
+            "volumes": [{
+                "source": "{ServiceName}-app",
+                "target": "/code/app",
+                "type": "volume"
+            }],
+            "post_install": [
+                "rm -rf /code/app/main.py && wget -O /code/app/main.py {Context.URL_MAIN}"
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:80",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}

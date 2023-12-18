@@ -1,0 +1,9 @@
+{
+    "name": "FastAPI",
+    "longDescription": "<p>FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints. FastAPI framework, high performance, easy to learn, fast to code, ready for production</p>",
+    "description": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.8+ based on standard Python type hints.",
+    "tags": ["FastAPI", "api", "api gateway", "gateway", "high-performance", "building", "Python", "framework"],
+    "repository": "https://github.com/Leak-VN/fastapi/",
+    "image": "https://hub.docker.com/r/vouu/fastapi/",
+    "supported_architectures": ["amd64", "arm64"]
+}
