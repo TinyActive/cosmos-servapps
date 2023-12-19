@@ -14,7 +14,7 @@
                 "cosmos-persistent-env": "NC_AUTH_JWT_SECRET",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
-                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/NocoDB/logo/teammapper-logo.png"
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/NocoDB/logo/icon.png"
             },
             "networks": {
                 "{ServiceName}-postgres": {}
