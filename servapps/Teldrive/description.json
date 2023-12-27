@@ -1,0 +1,9 @@
+{
+    "name": "Teldrive",
+    "longDescription": "<p>Telegram Drive is a powerful utility that enables you to create your own cloud storage service using Telegram as the backend.</p>",
+    "description": "Telegram Drive is a powerful utility that enables you to create your own cloud storage service using Telegram as the backend.",
+    "tags": ["Telegram Drive", "Telegram", "powerful", "storage", "self-hosted", "backend"],
+    "repository": "https://github.com/divyam234/teldrive/",
+    "image": "https://ghcr.io/divyam234/teldrive/server/",
+    "supported_architectures": ["amd64", "arm64"]
+}
