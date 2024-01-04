@@ -1,0 +1,9 @@
+{
+    "name": "RabbitMQ",
+    "longDescription": "<p>RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols and streaming. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.</p>",
+    "description": "RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols and streaming.",
+    "tags": ["RabbitMQ", "lightweight", "deploy", "premises", "messaging", "streaming"],
+    "repository": "https://github.com/docker-library/rabbitmq/",
+    "image": "https://hub.docker.com/_/rabbitmq/",
+    "supported_architectures": ["amd64", "arm64"]
+}
