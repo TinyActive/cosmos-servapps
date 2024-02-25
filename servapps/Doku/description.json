@@ -1,0 +1,9 @@
+{
+    "name": "Doku",
+    "longDescription": "<p>Doku is a simple, lightweight web-based application that allows you to monitor Docker disk usage in a user-friendly manner. The Doku displays the amount of disk space used by the Docker daemon, splits by images, containers, volumes, and builder cache</p>",
+    "description": "Doku is a simple, lightweight web-based application that allows you to monitor Docker disk usage in a user-friendly manner. The Doku displays the amount of disk space used by the Docker daemon, splits by images, containers, volumes, and builder cache.",
+    "tags": ["devops", "utility", "monitoring", "dashboard", "disk-space", "size-calculation", "disk-usage"],
+    "repository": "https://github.com/amerkurev/doku/",
+    "image": "https://hub.docker.com/r/amerkurev/doku/",
+    "supported_architectures": ["amd64","arm"]
+}
