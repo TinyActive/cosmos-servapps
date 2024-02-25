@@ -3,7 +3,7 @@
     "minVersion": "0.9.0",
     "services": {
       "{ServiceName}": {
-        "image": "ghcr.io/divyam234/teldrive/server",
+        "image": "ghcr.io/divyam234/teldrive",
         "container_name": "{ServiceName}",
         "restart": "unless-stopped",
         "environment": [
