@@ -1,0 +1,69 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "quay.io/invidious/invidious",
+            "container_name": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "database_url: postgres://invidious:{Passwords.0}@{ServiceName}-postgres:5432/invidious",
+                "hmac_key: ef90ccc0c9edb9173ceabb6ed0a27a7f"
+            ],
+            "labels": {
+                "cosmos-persistent-env": "TZ",
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Invidious/logo/invidious-colored-vector.svg"
+            },
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:3000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }]
+        },
+
+        "{ServiceName}-postgres": {
+            "image": "postgres:15-alpine",
+            "container_name": "{ServiceName}-postgres",
+            "hostname": "{ServiceName}-postgres",
+            "restart": "unless-stopped",
+            "networks": {
+                "{ServiceName}-postgres": {}
+            },
+            "stop_grace_period": 5,
+            "security_opt": [
+                "seccomp:unconfined",
+                "apparmor:unconfined"
+            ],
+            "volumes": [{
+                "source": "{ServiceName}-postgres-data",
+                "target": "/var/lib/postgresql/data",
+                "type": "volume"
+            }],
+            "labels": {
+                "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
+            },
+            "environment": [
+                "POSTGRES_DB=invidious",
+                "POSTGRES_USER=invidious",
+                "POSTGRES_PASSWORD={Passwords.0}"
+            ]
+        }
+    },
+
+    "networks": {
+        "{ServiceName}-postgres": {}
+    }
+}
