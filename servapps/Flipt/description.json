@@ -1,0 +1,9 @@
+{
+    "name": "Flipt",
+    "longDescription": "<p>Flipt enables you to follow DevOps best practices and separate releases from deployments. Built with high-performance engineering organizations in mind</b></p>",
+    "description": "Flipt can be deployed within your existing infrastructure so that you don't have to worry about your information being sent to a third party or the latency required to communicate across the internet.",
+    "tags": ["Acunetix", "auto", "browser", "vul", "self-hosted", "linux"],
+    "repository": "https://github.com/flipt-io/flipt/",
+    "image": "https://docker.flipt.io/flipt/flipt/",
+    "supported_architectures": ["amd64"]
+}
