@@ -1,0 +1,9 @@
+{
+    "name": "Plane",
+    "longDescription": "<p>Plane is an extensible, open source project and product management tool. It allows users to start with a basic task tracking tool and gradually adopt various project management frameworks like Agile, Waterfall, and many more.</p>",
+    "description": "Meet Plane, an open-source project management tool to track issues, run sprints cycles, and manage product roadmaps without the chaos of managing the tool itself.",
+    "tags": ["Plane", "Agile", "Waterfall", "linux"],
+    "repository": "https://github.com/makeplane/plane/",
+    "image": "https://hub.docker.com/u/makeplane/",
+    "supported_architectures": ["amd64"]
+}
