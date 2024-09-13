@@ -1,0 +1,9 @@
+{
+    "name": "NetAlertX",
+    "longDescription": "<p>Get visibility of what's going on on your WIFI/LAN network. Schedule scans for devices, port changes and get alerts if unknown devices or changes are found. Write your own Plugins with auto-generated UI and in-build notification system. Build out and easily maintain your network source of truth (NSoT).</p>",
+    "description": "WIFI / LAN intruder detector. Scans for devices connected to your network and alerts you if new and unknown devices are found",
+    "tags": ["NetAlertX", "WIFI", "LAN", "detector", "Scans", "port", "network"],
+    "repository": "https://github.com/jokob-sk/NetAlertX/",
+    "image": "https://hub.docker.com/r/jokobsk/netalertx/",
+    "supported_architectures": ["amd64","arm"]
+}
