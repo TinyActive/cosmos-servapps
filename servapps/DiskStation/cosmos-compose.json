@@ -24,7 +24,7 @@
                 "type": "volume"
             }],
             "restart": "on-failure",
-            "stop_grace_period": "1m",
+            "stop_grace_period": 60,
             "labels": {
                 "cosmos-persistent-env": "PUID, PGID, TZ",
                 "cosmos-force-network-secured": "true",
