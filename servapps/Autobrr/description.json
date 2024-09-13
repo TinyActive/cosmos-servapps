@@ -1,0 +1,9 @@
+{
+    "name": "Autobrr",
+    "longDescription": "<p>When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.</p>",
+    "description": "autobrr is the modern download automation tool for torrents.",
+    "tags": ["Autobrr", "torrent"],
+    "repository": "https://github.com/autobrr/autobrr/",
+    "image": "https://ghcr.io/autobrr/autobrr/",
+    "supported_architectures": ["amd64", "arm64"]
+}
