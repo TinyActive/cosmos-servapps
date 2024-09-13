@@ -119,7 +119,7 @@
                 "name": "{ServiceName}-spaces",
                 "description": "Expose {ServiceName}-spaces to the web",
                 "useHost": true,
-                "PathPrefix": "/god-mode",
+                "PathPrefix": "/spaces",
                 "target": "http://{ServiceName}-spaces:3002/spaces",
                 "mode": "SERVAPP",
                 "Timeout": 14400000,
