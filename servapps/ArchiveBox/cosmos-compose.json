@@ -17,7 +17,7 @@
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
-            "image": "archivebox/archivebox:dev",
+            "image": "archivebox/archivebox:stable",
             "container_name": "{ServiceName}",
             "environment": [
                 "ALLOWED_HOSTS=1000",
