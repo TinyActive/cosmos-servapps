@@ -1,0 +1,9 @@
+{
+    "name": "Spiderfoot",
+    "longDescription": "<p>SpiderFoot has an embedded web-server for providing a clean and intuitive web-based interface but can also be used completely via the command-line. It's written in Python 3 and MIT-licensed <br> Username: <b>kasm_user</b> <br> Password: <b>see install process</b></p>",
+    "description": "SpiderFoot is an open source intelligence (OSINT) automation tool. It integrates with just about every data source available and utilises a range of methods for data analysis, making that data easy to navigate.",
+    "tags": ["Spiderfoot", "scan", "ASM", "vul", "self-hosted", "linux"],
+    "repository": "https://github.com/smicallef/spiderfoot/",
+    "image": "https://hub.docker.com/r/kasmweb/spiderfoot",
+    "supported_architectures": ["amd64"]
+}
