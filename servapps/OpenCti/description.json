@@ -1,0 +1,9 @@
+{
+    "name": "OpenCTI",
+    "longDescription": "<p>OpenCTI is an open source platform allowing organizations to manage their cyber threat intelligence knowledge and observables. It has been created in order to structure, store, organize and visualize technical and non-technical information about cyber threats.</b></p>",
+    "description": "OpenCTI is an open source platform allowing organizations to manage their cyber threat intelligence knowledge and observables.",
+    "tags": ["OpenCTI", "platform", "intelligence", "cyber threat intelligence", "self-hosted", "linux"],
+    "repository": "https://github.com/OpenCTI-Platform/docker/",
+    "image": "https://hub.docker.com/r/opencti/platform",
+    "supported_architectures": ["amd64"]
+}
