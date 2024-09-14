@@ -49,6 +49,7 @@
             "labels": {
                 "cosmos-persistent-env": "NODE_ENV, RAILS_ENV, INSTALLATION_ENV, SECRET_KEY_BASE",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-chatwoot",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Chatwoot/logo/1233.webp"
             },
@@ -120,6 +121,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-chatwoot",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [
@@ -142,6 +144,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-chatwoot",
                 "cosmos-persistent-env": "DISCOURSE_REDIS_PASSWORD"
             },
             "environment": [

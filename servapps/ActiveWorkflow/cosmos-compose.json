@@ -30,6 +30,7 @@
                 "cosmos-persistent-env": "",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
+                "cosmos.stack": "{ServiceName}-active_workflow",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/ActiveWorkflow/logo/icon.png"
             },
             "networks": {
@@ -124,6 +125,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-active_workflow",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [

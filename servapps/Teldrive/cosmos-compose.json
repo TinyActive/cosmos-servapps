@@ -16,6 +16,7 @@
           "cosmos-persistent-env": "APP_ID, APP_HASH, JWT_SECRET, DATABASE_URL",
           "cosmos-force-network-secured": "true",
           "cosmos-auto-update": "true",
+          "cosmos.stack": "{ServiceName}-teldrive",
           "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Teldrive/logo/icon.png"
         },
         "networks": {
@@ -66,6 +67,7 @@
           }
         ],
         "labels": {
+          "cosmos.stack": "{ServiceName}-teldrive",
           "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
         },
         "environment": [

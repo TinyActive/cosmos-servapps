@@ -17,6 +17,7 @@
             "labels": {
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
+                "cosmos.stack": "{ServiceName}-social",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Social-Analyzer/logo/logo.jpg"
             },
             "routes": [{
@@ -47,6 +48,11 @@
                 "GRID_BROWSER_TIMEOUT=6000",
                 "GRID_TIMEOUT=6000"
             ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos.stack": "{ServiceName}-social"
+            },
             "restart": "unless-stopped"
         },
         "{ServiceName}-firefox": {
@@ -62,6 +68,11 @@
                 "SE_EVENT_BUS_SUBSCRIBE_PORT=4443",
                 "SE_NODE_MAX_SESSIONS=2"
             ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos.stack": "{ServiceName}-social"
+            },
             "volumes": [{
                 "source": "/dev/shm",
                 "target": "/dev/shm",

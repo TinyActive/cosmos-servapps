@@ -14,6 +14,7 @@
             "labels": {
                 "cosmos-persistent-env": "",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-listmonk",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Listmonk/logo/icon.png"
             },
@@ -57,6 +58,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-listmonk",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [

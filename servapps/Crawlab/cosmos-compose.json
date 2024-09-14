@@ -15,6 +15,7 @@
             "labels": {
                 "cosmos-persistent-env": "PUID, PGID, TZ",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-crawlab",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Crawlab/logo/cover.jpg"
             },
@@ -52,6 +53,10 @@
             "networks": {
                 "{ServiceName}-mongo": {}
             },
+            "labels": {
+                "cosmos.stack": "{ServiceName}-crawlab",
+                "cosmos-auto-update": "true",
+            },
             "volumes": [{
                 "source": "{ServiceName}-worker01",
                 "target": "/root/.crawlab",
@@ -70,6 +75,10 @@
             ],
             "networks": {
                 "{ServiceName}-mongo": {}
+            },
+            "labels": {
+                "cosmos.stack": "{ServiceName}-crawlab",
+                "cosmos-auto-update": "true",
             },
             "volumes": [{
                 "source": "{ServiceName}-worker02",
@@ -98,6 +107,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-crawlab",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             }
         }

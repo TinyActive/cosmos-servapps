@@ -17,6 +17,7 @@
             "labels": {
                 "cosmos-persistent-env": "DB_TYPE, DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-wiki",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Wikijs/logo/wikijs-full-2021-768t-svg-yOi8.png"
             },
@@ -57,6 +58,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-wiki",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [

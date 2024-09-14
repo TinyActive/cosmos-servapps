@@ -82,6 +82,7 @@
             "labels": {
                 "cosmos-persistent-env": "TZ",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-analytics",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Plausible/logo/icon.png"
             },
@@ -128,6 +129,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-analytics",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [
@@ -152,6 +154,9 @@
             "post_install": [
                 "rm -rf /etc/clickhouse-server/config.d/logging.xml /etc/clickhouse-server/users.d/logging.xml && wget -O /etc/clickhouse-server/config.d/logging.xml https://cosmos.manhtuong.net/servapps/Plausible/config/clickhouse-config.xml && wget -O /etc/clickhouse-server/users.d/logging.xml https://cosmos.manhtuong.net/servapps/Plausible/config/clickhouse-user-config.xml"
             ],
+            "labels": {
+                "cosmos.stack": "{ServiceName}-analytics"
+            },
             "volumes": [{
                 "source": "{ServiceName}-postgres-data",
                 "target": "/var/lib/postgresql/data",

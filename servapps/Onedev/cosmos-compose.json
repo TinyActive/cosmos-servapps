@@ -51,6 +51,7 @@
             "labels": {
                 "cosmos-persistent-env": "",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-1dev",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Onedev/logo/logo.svg"
             },
@@ -98,7 +99,8 @@
                 "type": "volume"
             }],
             "labels": {
-                "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
+                "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD",
+                "cosmos.stack": "{ServiceName}-1dev"
             },
             "environment": [
                 "POSTGRES_DB=onedev",

@@ -115,6 +115,7 @@
             "labels": {
                 "cosmos-persistent-env": "TRUSTED_PROXIES, PUSHER_APP_SECRET, REDIS_PORT",
                 "cosmos-force-network-secured": "true",
+                "cosmos.stack": "{ServiceName}-2fauth",
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/2fauth/logo/ezgif-2-01616207b8.png"
             },
@@ -158,7 +159,8 @@
                 "type": "volume"
             }],
             "labels": {
-                "cosmos-persistent-env": "REDIS_PASSWORD"
+                "cosmos-persistent-env": "REDIS_PASSWORD",
+                "cosmos.stack": "{ServiceName}-2fauth"
             },
             "environment": [
                 "REDIS_PASSWORD={Passwords.1}"

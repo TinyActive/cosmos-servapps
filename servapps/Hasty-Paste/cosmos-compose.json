@@ -13,6 +13,7 @@
                 "TIME_ZONE=Etc/UTC"
             ],
             "labels": {
+                "cosmos.stack": "{ServiceName}-hasty-paste",
                 "cosmos-persistent-env": "CACHE__REDIS_URI, TIME_ZONE",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
@@ -52,6 +53,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-hasty-paste",
                 "cosmos-persistent-env": "REDIS_PASSWORD"
             },
             "environment": [

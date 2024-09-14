@@ -20,6 +20,7 @@
                 "cosmos-persistent-env": "DB_CONNECTION, DB_DATABASE, DB_USERNAME, DB_PASSWORD, DB_HOST",
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
+                "cosmos.stack": "{ServiceName}-koel",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Koel/logo/icon.png"
             },
             "networks": {
@@ -75,6 +76,7 @@
                 "type": "volume"
             }],
             "labels": {
+                "cosmos.stack": "{ServiceName}-koel",
                 "cosmos-persistent-env": "POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD"
             },
             "environment": [
