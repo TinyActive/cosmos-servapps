@@ -53,10 +53,10 @@
     "minVersion": "0.9.0",
     "services": {
         "{ServiceName}": {
-            "image": "plausible/analytics",
+            "image": "vouu/plausible-analytics:latest",
             "container_name": "{ServiceName}",
             "restart": "unless-stopped",
-            "command": "sh -c \"sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run\"",
+            "command": "sh /tiny.sh",
             "environment": [
                 "BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
                 "PORT=8080",
@@ -89,12 +89,12 @@
                 "{ServiceName}-postgres": {}
             },
             "volumes": [{
-                    "source": "{ServiceName}-confluence_data",
+                    "source": "{ServiceName}-plausible",
                     "target": "/var/confluence",
                     "type": "volume"
                 },
                 {
-                    "source": "{ServiceName}-confluence_conf",
+                    "source": "{ServiceName}-plausible-conf",
                     "target": "/opt/confluence/conf/",
                     "type": "volume"
                 }
