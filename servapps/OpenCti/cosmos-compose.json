@@ -48,7 +48,7 @@
         "image": "docker.elastic.co/elasticsearch/elasticsearch:8.15.0",
         "volumes": [
           {
-            "source": "esdata",
+            "source": "{ServiceName}-esdata",
             "target": "/usr/share/elasticsearch/data",
             "type": "volume"
           }
@@ -83,7 +83,7 @@
         "image": "minio/minio:RELEASE.2024-05-28T17-19-04Z",
         "volumes": [
           {
-            "source": "s3data",
+            "source": "{ServiceName}-s3data",
             "target": "/data",
             "type": "volume"
           }
@@ -113,7 +113,7 @@
         ],
         "volumes": [
           {
-            "source": "amqpdata",
+            "source": "{ServiceName}-amqpdata",
             "target": "/var/lib/rabbitmq",
             "type": "volume"
           }
