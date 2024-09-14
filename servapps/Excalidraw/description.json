@@ -1,0 +1,9 @@
+{
+    "name": "Excalidraw",
+    "longDescription": "<p>Excalidraw is a collaborative, shared whiteboard for typed text and sketching. It's really useful for summarising notes & making diagrams for forum posts; it's one of the tools I've used a lot to make these tutorials! Its key attractions are simplicity and easy collaboration. It is designed for quickly creating simple graphics, and has a sloppy/whiteboard style.</b></p>",
+    "description": "An open source virtual hand-drawn style whiteboard. Collaborative and end-to-end encrypted.",
+    "tags": ["virtual", "auto", "whiteboard", "hand-drawn", "self-hosted", "linux"],
+    "repository": "https://github.com/excalidraw/excalidraw/",
+    "image": "https://hub.docker.com/r/excalidraw/excalidraw/",
+    "supported_architectures": ["amd64"]
+}
