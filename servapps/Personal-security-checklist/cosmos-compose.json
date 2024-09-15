@@ -1,0 +1,38 @@
+{
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "After installation access follow user: admin@acu.com and Password: Passw0rd!"
+        }]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/personal-security-checklist",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Acunetix/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "https://{ServiceName}:5173",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}

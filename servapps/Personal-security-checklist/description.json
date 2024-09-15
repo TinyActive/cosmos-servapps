@@ -1,0 +1,9 @@
+{
+    "name": "PSC",
+    "longDescription": "<p>Here you can browse lists, filter by your threat model and tick items off once complete (plus, there are pretty charts to make you feel good about your progress</b></p>",
+    "description": "A compiled checklist of 300+ tips for protecting digital security and privacy in 2024.",
+    "tags": ["checklist", "compiled", "protecting", "digital security", "self-hosted", "linux"],
+    "repository": "https://github.com/Lissy93/personal-security-checklist",
+    "image": "https://hub.docker.com/r/vouu/personal-security-checklist",
+    "supported_architectures": ["amd64", "arm64"]
+}
