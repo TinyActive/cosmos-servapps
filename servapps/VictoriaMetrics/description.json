@@ -1,0 +1,9 @@
+{
+    "name": "VictoriaMetrics",
+    "longDescription": "<p>VictoriaMetrics is a fast, cost-saving, and scalable solution for monitoring and managing time series data. It delivers high performance and reliability, making it an ideal choice for businesses of all sizes</b></p>",
+    "description": "VictoriaMetrics is a fast, cost-saving, and scalable solution for monitoring and managing time series data. It delivers high performance and reliability, making it an ideal choice for businesses of all sizes.",
+    "tags": ["VictoriaMetrics", "cost-saving", "browser", "monitoring", "data", "performance"],
+    "repository": "https://github.com/VictoriaMetrics/VictoriaMetrics/",
+    "image": "https://hub.docker.com/r/victoriametrics/victoria-metrics/",
+    "supported_architectures": ["amd64","arm"]
+}
