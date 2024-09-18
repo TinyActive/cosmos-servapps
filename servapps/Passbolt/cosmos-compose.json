@@ -1,0 +1,77 @@
+{
+    "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "You need to go to the url settings and enable the Accept Insecure HTTPS Target (not recommended) option"
+        }]
+    },
+    "version": "3.9",
+    "services": {
+      "{ServiceName}-db": {
+        "image": "mariadb:10.11",
+        "restart": "unless-stopped",
+        "environment": [
+          "MYSQL_RANDOM_ROOT_PASSWORD=true",
+          "MYSQL_DATABASE=passbolt",
+          "MYSQL_USER=passbolt",
+          "MYSQL_PASSWORD={Passwords.0}"
+        ],
+        "volumes": [
+          {
+            "source": "{ServiceName}-database_volume",
+            "target": "/var/lib/mysql",
+            "type": "volume"
+          }
+        ],
+        "container_name": "{ServiceName}-db",
+        "hostname": "{ServiceName}-db",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}": {
+        "image": "passbolt/passbolt:latest-ce",
+        "restart": "unless-stopped",
+        "environment": [
+          "APP_FULL_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
+          "DATASOURCES_DEFAULT_HOST={ServiceName}-db",
+          "DATASOURCES_DEFAULT_USERNAME=passbolt",
+          "DATASOURCES_DEFAULT_PASSWORD={Passwords.0}",
+          "DATASOURCES_DEFAULT_DATABASE=passbolt"
+        ],
+        "volumes": [
+          {
+            "source": "{ServiceName}-gpg_volume",
+            "target": "/etc/passbolt/gpg",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-jwt_volume",
+            "target": "/etc/passbolt/jwt",
+            "type": "volume"
+          }
+        ],
+        "command": "/usr/bin/wait-for.sh -t 0 {ServiceName}-db:3306 -- /docker-entrypoint.sh",
+        "routes": [{
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "https://{ServiceName}:443",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+              "Enabled": true
+          }
+      }],
+        "container_name": "passbolt",
+        "hostname": "{ServiceName}",
+        "labels": {
+          "cosmos.stack": "{ServiceName}",
+          "cosmos.stack.main": "true"
+  
+        }
+      }
+    }
+  }

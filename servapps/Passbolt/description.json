@@ -1,0 +1,9 @@
+{
+    "name": "Passbolt",
+    "longDescription": "<p>Finally, a password manager built for organizations that take their security and privacy seriously. Passbolt is trusted by 15 000 of them worldwide, including F500 companies, the defense industry, universities, startups and many others</b></p>",
+    "description": "Finally, a password manager built for organizations that take their security and privacy seriously. Passbolt is trusted by 15 000 of them worldwide, including F500 companies, the defense industry, universities, startups and many others.",
+    "tags": ["password", "manager", "organizations", "privacy", "self-hosted", "linux"],
+    "repository": "https://github.com/passbolt/passbolt",
+    "image": "https://github.com/passbolt/passbolt_docker/",
+    "supported_architectures": ["amd64"]
+}
