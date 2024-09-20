@@ -1,5 +1,9 @@
 {
     "cosmos-installer": {
+        "post-install": [{
+            "type": "info",
+            "label": "After installation buy key very cheap 20$ for lifetime version  https://l.4sdk.net/sonar/ or contact sale@tinyactive.net"
+        }],
       "form": [
         {
           "name": "SONARQUBE_USERNAME",
