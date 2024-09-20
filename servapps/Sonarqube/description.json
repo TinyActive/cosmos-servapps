@@ -1,0 +1,9 @@
+{
+    "name": "Sonarqube Data Center Edition",
+    "longDescription": "<p>SonarQube Data Center Edition offers a centralized, scalable, and highly available instance for organizations that need support for large development teams and complex projects.</p>",
+    "description": "SonarQube Data Center Edition offers a centralized, scalable, and highly available instance for organizations that need support for large development teams and complex projects.",
+    "tags": ["development", "repository management", "code collaboration", "issue tracking", "self-hosted"],
+    "repository": "https://github.com/vncloudsco/sonarqube-arm/",
+    "image": "https://hub.docker.com/r/vouu/sonarqube",
+    "supported_architectures": ["amd64", "arm64"]
+}
