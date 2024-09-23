@@ -56,7 +56,7 @@
           "name": "{ServiceName}",
           "description": "Expose {ServiceName} to the web",
           "useHost": true,
-          "target": "https://{ServiceName}:443",
+          "target": "http://{ServiceName}:443",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,

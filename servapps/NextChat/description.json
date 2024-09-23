@@ -1,0 +1,9 @@
+{
+    "name": "NextChat",
+    "longDescription": "<p>One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 & Gemini Pro support</b></p>",
+    "description": "One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 & Gemini Pro support.",
+    "tags": ["NextChat", "chatgpt", "GPT3", "GPT4", "Gemini", "cross-platform"],
+    "repository": "https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web/",
+    "image": "https://hub.docker.com/r/yidadaa/chatgpt-next-web",
+    "supported_architectures": ["amd64","arm64"]
+}
