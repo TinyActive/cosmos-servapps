@@ -1,0 +1,9 @@
+{
+    "name": "Acunetix",
+    "longDescription": "<p>Quickly find and fix the vulnerabilities that put your web applications at risk of attack. Enjoy more peace of mind without investing more of your limited time.<br> Username: <b>admin@acu.com</b> <br> Password: <b>Passw0rd!</b></p>",
+    "description": "Acunetix is an end-to-end web security scanner that offers a 360 view of an organization's security.",
+    "tags": ["Acunetix", "auto", "browser", "vul", "self-hosted", "linux"],
+    "repository": "https://quay.io/repository/hiepnv/acunetix/",
+    "image": "https://quay.io/repository/hiepnv/acunetix/",
+    "supported_architectures": ["amd64"]
+}

@@ -1,0 +1,78 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "URL_MAIN",
+                "label": "What is your shhgit router download link?",
+                "initialValue": "https://raw.githubusercontent.com/eth0izzle/shhgit/refs/heads/master/config.yaml",
+                "type": "text"
+            }
+        ]
+    },
+    "minVersion": "0.8.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/shhgit",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Shhgit/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-data",
+                    "target": "/usr/share/nginx/html",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "entrypoint": [
+                "/app/shhgit",
+                "--live=http://shhgit-www/push"
+              ],
+            "restart": "unless-stopped"
+        },
+        "{ServiceName}-apps": {
+            "image": "vouu/shhgit",
+            "container_name": "{ServiceName}-apps",
+            "hostname": "{ServiceName}-apps",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Shhgit/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-data",
+                    "target": "/usr/share/nginx/html",
+                    "type": "volume"
+                }
+            ],
+            "post_install": [
+                "rm -rf /app/config.yaml && wget -O /app/config.yaml {Context.URL_MAIN}"
+            ],
+            "entrypoint": [
+                "/app/shhgit",
+                "--live=http://{ServiceName}/push"
+              ],
+            "restart": "unless-stopped"
+        }
+    }
+}
