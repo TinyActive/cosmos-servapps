@@ -1,0 +1,38 @@
+{
+    "cosmos-installer": {
+      "post-install": [
+        {
+          "type": "warning",
+          "label": "The password admin: 2Qnm73J2x8m9DPWu store it carefully"
+        }
+      ]
+    },
+    "minVersion": "0.15.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "vouu/nessus-professional",
+            "container_name": "{ServiceName}",
+            "command": "bash /nessus/update.sh 'https://plugins.nessus.org/v2/nessus.php?f=all-2.0.tar.gz&u=4e2abfd83a40e2012ebf6537ade2f207&p=29a34e24fc12d3f5fdfbb1ae948972c6'",
+   
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Nessus/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "https://{ServiceName}:8834",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,    
+                "SmartShield": {
+                    "Enabled": true
+                }
+            }],
+            "restart": "unless-stopped"
+        }
+    }
+}

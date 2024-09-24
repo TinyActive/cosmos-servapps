@@ -1,0 +1,9 @@
+{
+    "name": "Nessus",
+    "longDescription": "Nessus is built from the ground-up with a deep understanding of how security practitioners work. Every feature in Nessus is designed to make vulnerability",
+    "description": "Nessus is built from the ground-up with a deep understanding of how security practitioners work. Every feature in Nessus is designed to make vulnerability.",
+    "tags": ["Nessus", "auto", "browser", "vulnerability", "self-hosted", "linux"],
+    "repository": "https://github.com/elliot-bia/nessus/",
+    "image": "https://hub.docker.com/r/vouu/nessus-professional/",
+    "supported_architectures": ["amd64"]
+}
