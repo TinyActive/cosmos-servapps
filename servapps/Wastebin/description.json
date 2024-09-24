@@ -1,0 +1,9 @@
+{
+    "name": "Wastebin",
+    "longDescription": "It does not require you to host a SQL server and everything is self-contained in a statically linked binary (the docker image runs on scratch !), which makes it extremely easy to deploy",
+    "description": "A minimal pastebin which also accepts binary files like Images, PDFs and ships multiple clients.",
+    "tags": ["pastebin", "auto", "note", "multiple-file", "self-hosted", "linux"],
+    "repository": "https://github.com/Leak-VN/wastebin/",
+    "image": "https://hub.docker.com/r/vouu/wastebin/",
+    "supported_architectures": ["amd64"]
+}

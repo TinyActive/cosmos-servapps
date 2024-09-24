@@ -1,0 +1,295 @@
+{
+    "cosmos-installer": {
+        "form": [{
+                "name": "URL_MAIN",
+                "label": "What is your nginx router rengine download link?",
+                "initialValue": "https://cosmos.manhtuong.net/servapps/Rengine/artefacts/rengine.conf",
+                "type": "text"
+            }
+        ]
+    },
+    "minVersion": "0.15.0",
+    "services": {
+      "{ServiceName}-db": {
+        "restart": "always",
+        "image": "postgres:12.3-alpine",
+        "environment": [
+          "POSTGRES_DB=rengine",
+          "POSTGRES_USER=rengine",
+          "POSTGRES_PASSWORD={Passwords.0}",
+          "POSTGRES_PORT=5432"
+        ],
+  
+        "volumes": [
+          {
+            "source": "{ServiceName}-postgres_data",
+            "target": "/var/lib/postgresql/data/",
+            "type": "volume"
+          }
+        ],
+        "container_name": "{ServiceName}-db",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}-redis": {
+        "restart": "always",
+        "image": "redis:alpine",
+        "hostname": "redis",
+        "container_name": "{ServiceName}-redis",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}-celery": {
+        "image": "vouu/rengine-dev",
+        "restart": "always",
+        "entrypoint": "/usr/src/app/celery-entrypoint.sh",
+        "volumes": [
+          {
+            "source": "{ServiceName}-web",
+            "target": "/usr/src/app",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-github_repos",
+            "target": "/usr/src/github",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-wordlist",
+            "target": "/usr/src/wordlist",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-scan_results",
+            "target": "/usr/src/scan_results",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-gf_patterns",
+            "target": "/root/.gf",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-nuclei_templates",
+            "target": "/root/nuclei-templates",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-tool_config",
+            "target": "/root/.config",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-static_volume",
+            "target": "/usr/src/app/staticfiles/",
+            "type": "volume"
+          }
+        ],
+        "environment": [
+          "DEBUG=0",
+          "CELERY_BROKER=redis://{ServiceName}-redis:6379/0",
+          "CELERY_BACKEND=redis://{ServiceName}-redis:6379/0",
+          "DOMAIN_NAME=${DOMAIN_NAME}",
+          "POSTGRES_DB=rengine",
+          "POSTGRES_USER=rengine",
+          "POSTGRES_PASSWORD={Passwords.0}",
+          "POSTGRES_PORT=5432",
+          "POSTGRES_HOST={ServiceName}-db",
+          "MAX_CONCURRENCY=80",
+          "MIN_CONCURRENCY=10"
+        ],
+        "container_name": "{ServiceName}-celery",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}-celery-beat": {
+        "image": "vouu/rengine-dev",
+        "entrypoint": "/usr/src/app/beat-entrypoint.sh",
+        "command": "celery -A reNgine beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler",
+        "environment": [
+          "CELERY_BROKER=redis://{ServiceName}-redis:6379/0",
+          "CELERY_BACKEND=redis://{ServiceName}-redis:6379/0",
+          "POSTGRES_DB=rengine",
+          "POSTGRES_USER=rengine",
+          "POSTGRES_PASSWORD={Passwords.0}",
+          "POSTGRES_PORT=5432",
+          "POSTGRES_HOST={ServiceName}-db"
+        ],
+        "volumes": [
+          {
+            "source": "{ServiceName}-web",
+            "target": "/usr/src/app",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-github_repos",
+            "target": "/usr/src/github",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-wordlist",
+            "target": "/usr/src/wordlist",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-scan_results",
+            "target": "/usr/src/scan_results",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-gf_patterns",
+            "target": "/root/.gf",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-nuclei_templates",
+            "target": "/root/nuclei-templates",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-tool_config",
+            "target": "/root/.config",
+            "type": "volume"
+          }
+        ],
+        "container_name": "{ServiceName}-celery-beat",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}-web": {
+        "image": "vouu/rengine-dev",
+        "entrypoint": "/usr/src/app/entrypoint.sh",
+        "restart": "always",
+        "environment": [
+          "DEBUG=0",
+          "CELERY_BROKER=redis://{ServiceName}-redis:6379/0",
+          "CELERY_BACKEND=redis://{ServiceName}-redis:6379/0",
+          "DOMAIN_NAME=${DOMAIN_NAME}",
+          "POSTGRES_DB=rengine",
+          "POSTGRES_USER=rengine",
+          "POSTGRES_PASSWORD={Passwords.0}",
+          "POSTGRES_PORT=5432",
+          "POSTGRES_HOST={ServiceName}-db",
+          "DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}"
+        ],
+        "volumes": [
+          {
+            "source": "{ServiceName}-web",
+            "target": "/usr/src/app",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-github_repos",
+            "target": "/usr/src/github",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-wordlist",
+            "target": "/usr/src/wordlist",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-scan_results",
+            "target": "/usr/src/scan_results",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-gf_patterns",
+            "target": "/root/.gf",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-nuclei_templates",
+            "target": "/root/nuclei-templates",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-tool_config",
+            "target": "/root/.config",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-static_volume",
+            "target": "/usr/src/app/staticfiles/",
+            "type": "volume"
+          }
+        ],
+        "container_name": "{ServiceName}-web",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}",
+          "cosmos.stack.main": "true",
+          "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Rengine/logo/0_lJTkWI1TOFW-dvkY.png"
+        }
+      },
+      "{ServiceName}-proxy": {
+        "restart": "always",
+        "image": "nginx:alpine",
+        "ports": [
+          "8082:8082/tcp"
+        ],
+        "post_install": [
+          "rm -rf /etc/nginx/conf.d/rengine.conf &&  curl -L -o /etc/nginx/conf.d/rengine.conf {Context.URL_MAIN} && sed -i 's/rengine:8000/{ServiceName}-web:8000/g' /etc/nginx/conf.d/rengine.conf"
+        ],
+        "routes": [{
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}-proxy:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+              "Enabled": true
+          }
+      }],
+        "volumes": [
+          {
+            "source": "{ServiceName}-static_volume",
+            "target": "/usr/src/app/staticfiles/",
+            "type": "volume"
+          },
+          {
+            "source": "{ServiceName}-scan_results",
+            "target": "/usr/src/scan_results",
+            "type": "volume"
+          }
+        ],
+        "container_name": "{ServiceName}-proxy",
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      },
+      "{ServiceName}-ollama": {
+        "image": "ollama/ollama",
+        "container_name": "ollama",
+        "volumes": [
+          {
+            "source": "{ServiceName}-ollama_data",
+            "target": "/root/.ollama",
+            "type": "volume"
+          }
+        ],
+        "ports": [
+          "11434:11434"
+        ],
+        "network_mode": "{ServiceName}-network",
+        "labels": {
+          "cosmos.stack": "{ServiceName}"
+        }
+      }
+    },
+    "networks": {
+      "{ServiceName}-network": {}
+    }
+  }
