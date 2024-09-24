@@ -1,0 +1,9 @@
+{
+    "name": "reNgine",
+    "longDescription": "reNgine is your ultimate web application reconnaissance suite, designed to supercharge the recon process for security pros, pentesters, and bug bounty hunters. It is go-to web application reconnaissance suite that's designed to simplify and streamline the reconnaissance process for all the needs of security professionals, penetration testers, and bug bounty hunters. With its highly configurable engines, data correlation capabilities, continuous monitoring, database-backed reconnaissance data, and an intuitive user interface, reNgine redefines how you gather critical information about your target web applications",
+    "description": "reNgine is your ultimate web application reconnaissance suite, designed to supercharge the recon process for security pros, pentesters, and bug bounty hunters.",
+    "tags": ["reNgine", "supercharge", "security pros", "pentesters", "bounty hunters", "linux"],
+    "repository": "https://github.com/yogeshojha/rengine/",
+    "image": "https://hub.docker.com/r/vouu/rengine-dev/",
+    "supported_architectures": ["amd64","arm"]
+}
