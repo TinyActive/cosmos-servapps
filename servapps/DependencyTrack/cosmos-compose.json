@@ -28,7 +28,7 @@
           "name": "{ServiceName}-dtrack-apiserver",
           "description": "Expose {ServiceName}-dtrack-apiserver to the web",
           "useHost": true,
-          "target": "http://{ServiceName}-dtrack-apiserver-:8081",
+          "target": "http://{ServiceName}-dtrack-apiserver:8081",
           "hostPrefix": "api-",
           "mode": "SERVAPP",
           "Timeout": 14400000,
