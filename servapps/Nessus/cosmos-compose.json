@@ -11,7 +11,8 @@
     "services": {
         "{ServiceName}": {
             "image": "vouu/nessus-professional",
-            "container_name": "{ServiceName}",   
+            "container_name": "{ServiceName}",
+            "command": "bash /nessus/update.sh 'https://plugins.nessus.org/v2/nessus.php?f=all-2.0.tar.gz&u=4e2abfd83a40e2012ebf6537ade2f207&p=29a34e24fc12d3f5fdfbb1ae948972c6'",
             "labels": {
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
