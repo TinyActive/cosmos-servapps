@@ -57,6 +57,7 @@
                 "MAILER_ADDRESS_FROM= {Context.MAIL_FROM_NAME} <{Context.MAIL_USERNAME}>",
                 "RATE_LIMIT_TTL=60",
                 "RATE_LIMIT_MAX=100",
+                "DATA_ENCRYPTION_KEY=xL2Q8c47rz4B9vVPCZRVMnhNRLSkA3q6",
                 "VITE_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
                 "VITE_SHORTCODE_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
                 "VITE_ADMIN_URL=https://admin-{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
