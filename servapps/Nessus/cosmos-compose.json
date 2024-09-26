@@ -28,7 +28,8 @@
                 "BlockCommonBots": true,    
                 "SmartShield": {
                     "Enabled": true
-                }
+                },
+              "AcceptInsecureHTTPSTarget": true,
             }],
             "restart": "unless-stopped"
         }

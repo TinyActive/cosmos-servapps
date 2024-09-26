@@ -45,7 +45,8 @@
                 "BlockCommonBots": true,
                 "SmartShield": {
                     "Enabled": true
-                }
+                },
+                "AcceptInsecureHTTPSTarget": true,
             }],
             "shm_size": "4gb",
             "restart": "unless-stopped"
