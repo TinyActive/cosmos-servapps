@@ -34,7 +34,7 @@
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
-            "image": "hoppscotch/hoppscotch",
+            "image": "hoppscotch/hoppscotch:2024.7.2",
             "container_name": "{ServiceName}",
             "security_opt": [
                 "seccomp:unconfined"
@@ -57,7 +57,6 @@
                 "MAILER_ADDRESS_FROM= {Context.MAIL_FROM_NAME} <{Context.MAIL_USERNAME}>",
                 "RATE_LIMIT_TTL=60",
                 "RATE_LIMIT_MAX=100",
-                "DATA_ENCRYPTION_KEY=xL2Q8c47rz4B9vVPCZRVMnhNRLSkA3q6",
                 "VITE_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
                 "VITE_SHORTCODE_BASE_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
                 "VITE_ADMIN_URL=https://admin-{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
@@ -74,7 +73,9 @@
                 "cosmos-auto-update": "true",
                 "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Hoppscotch/logo/logo.svg"
             },
-
+            "post_install": [
+                "pnpx prisma migrate deploy"
+              ],
             "routes": [{
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",
