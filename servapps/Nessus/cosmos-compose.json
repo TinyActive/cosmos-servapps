@@ -29,7 +29,7 @@
                 "SmartShield": {
                     "Enabled": true
                 },
-              "AcceptInsecureHTTPSTarget": true,
+              "AcceptInsecureHTTPSTarget": true
             }],
             "restart": "unless-stopped"
         }
