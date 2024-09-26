@@ -7,7 +7,7 @@
       "form": [
         {
           "name": "SONARQUBE_USERNAME",
-          "label": "What is your Sonarqube user login? If the password is incorrect, use admin as the username.",
+          "label": "What is your Sonarqube user login? If the user is incorrect, use admin as the username.",
           "initialValue": "admin",
           "type": "text"
         },
