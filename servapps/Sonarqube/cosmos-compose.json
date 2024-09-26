@@ -13,8 +13,8 @@
         },
         {
           "name": "SONARQUBE_PASSWORD",
-          "label": "What Sonarqube password does it use?",
-          "initialValue": "bitnami",
+          "label": "What Sonarqube password does it use? If the password is incorrect, use admin as the password.",
+          "initialValue": "admin",
           "type": "password"
         },
         {
