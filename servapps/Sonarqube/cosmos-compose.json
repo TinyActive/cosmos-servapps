@@ -7,7 +7,7 @@
       "form": [
         {
           "name": "SONARQUBE_USERNAME",
-          "label": "What is your Sonarqube user login?",
+          "label": "What is your Sonarqube user login? If the password is incorrect, use admin as the username.",
           "initialValue": "admin",
           "type": "text"
         },
@@ -32,14 +32,13 @@
         "container_name": "{ServiceName}",
         "restart": "unless-stopped",
         "environment": [
+          "SONAR_JDBC_URL",
           "SONARQUBE_PASSWORD={Context.SONARQUBE_PASSWORD}",
           "SONARQUBE_USERNAME={Context.SONARQUBE_USERNAME}",
           "SONARQUBE_EMAIL={Context.SONARQUBE_EMAIL}",
-          "SONARQUBE_DATABASE_HOST={ServiceName}-postgres",
-          "SONARQUBE_DATABASE_PORT_NUMBER=5432",
-          "SONARQUBE_DATABASE_USER=sonarqube",
-          "SONARQUBE_DATABASE_NAME=sonarqube",
-          "SONARQUBE_DATABASE_PASSWORD={Passwords.0}"
+          "SONAR_JDBC_URL=jdbc:postgresql://{ServiceName}-postgres:5432/sonarqube",
+          "SONAR_JDBC_USERNAME=sonarqube",
+          "SONAR_JDBC_PASSWORD={Passwords.0}"
         ],
         "labels": {
           "cosmos-persistent-env": "SONARQUBE_DATABASE_PORT_NUMBER, SONARQUBE_DATABASE_USER, SONARQUBE_DATABASE_NAME, SONARQUBE_DATABASE_PASSWORD ",
