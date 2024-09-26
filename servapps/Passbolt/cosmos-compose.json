@@ -1,10 +1,5 @@
 {
-    "cosmos-installer": {
-        "post-install": [{
-            "type": "info",
-            "label": "You need to go to the url settings and enable the Accept Insecure HTTPS Target (not recommended) option"
-        }]
-    },
+    "cosmos-installer": {},
     "version": "3.9",
     "services": {
       "{ServiceName}-db": {
@@ -56,14 +51,15 @@
           "name": "{ServiceName}",
           "description": "Expose {ServiceName} to the web",
           "useHost": true,
-          "target": "http://{ServiceName}:443",
+          "target": "https://{ServiceName}:443",
           "mode": "SERVAPP",
           "Timeout": 14400000,
           "ThrottlePerMinute": 12000,
           "BlockCommonBots": true,
           "SmartShield": {
               "Enabled": true
-          }
+          },
+          "AcceptInsecureHTTPSTarget": true
       }],
         "container_name": "passbolt",
         "hostname": "{ServiceName}",
