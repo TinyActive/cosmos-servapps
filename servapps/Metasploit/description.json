@@ -1,0 +1,9 @@
+{
+    "name": "Metasploit",
+    "longDescription": "<p>Find security issues, verify vulnerability mitigations & manage security assessments with Metasploit. Get the world's best penetration testing software now.<br> Username: <b>admin</b> <br> Password: <b>:zzecq\"9!</b></p>",
+    "description": "Find security issues, verify vulnerability mitigations & manage security assessments with Metasploit. Get the world's best penetration testing software now.",
+    "tags": ["Metasploit", "auto", "browser", "vul", "self-hosted", "linux"],
+    "repository": "https://www.metasploit.com/",
+    "image": "https://hub.docker.com/r/vouu/meta-pro",
+    "supported_architectures": ["amd64"]
+}
