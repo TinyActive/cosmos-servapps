@@ -12,6 +12,9 @@
         "{ServiceName}": {
             "image": "vouu/nessus-professional:26-9-2024",
             "container_name": "{ServiceName}",
+            "ports": [
+              "4444:4444"
+            ],
             "labels": {
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
