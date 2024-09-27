@@ -28,7 +28,7 @@
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",
                 "useHost": true,
-                "target": "https://{ServiceName}:3443",
+                "target": "https://{ServiceName}:3790",
                 "mode": "SERVAPP",
                 "Timeout": 14400000,
                 "ThrottlePerMinute": 12000,
