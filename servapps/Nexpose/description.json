@@ -1,0 +1,9 @@
+{
+    "name": "Nexpose",
+    "longDescription": "<p>Vulnerability scanning and analysis is the process that detects and assesses the vulnerabilities that exist within an network infrastructure. A vulnerability is a characteristic of an asset that an attacker can exploit to gain unauthorized access to sensitive data, inject malicious code, or generate a denial of service attack. To prevent security breaches, it is important to identify and remediate security holes and vulnerabilities that can expose an asset to an attack.<br> Username: <b>admin</b> <br> Password: <b>6Rhm2wH2v3n9cgPF</b></p>",
+    "description": "Nexpose integrates with Metasploit Pro to provide a vulnerability assessment and validation tool that helps you eliminate false positives, verify vulnerabilities, and test remediation measures.",
+    "tags": ["Nexpose", "auto", "browser", "vul", "self-hosted", "linux"],
+    "repository": "https://www.rapid7.com/products/nexpose//",
+    "image": "https://hub.docker.com/r/vouu/nexpose/",
+    "supported_architectures": ["amd64"]
+}
