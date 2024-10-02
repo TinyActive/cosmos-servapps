@@ -20,7 +20,7 @@
             },
             "volumes": [{
                     "source": "{ServiceName}-nexpose",
-                    "target": "opt/rapid7/nexpose/",
+                    "target": "/opt/rapid7/nexpose/",
                     "type": "volume"
                 }
             ],
