@@ -1,0 +1,47 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.15.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "openvpn/openvpn-as",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Openvpn-as/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "ports": [
+                "1194:1194/udp"
+              ],
+            "volumes": [{
+                    "source": "{ServiceName}-openvpn-config",
+                    "target": "/openvpn",
+                    "type": "volume"
+                }
+            ],
+            "cap_add": [
+                "NET_ADMIN"
+              ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "https://{ServiceName}:943",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                },
+                "AcceptInsecureHTTPSTarget": true
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}

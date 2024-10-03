@@ -1,0 +1,9 @@
+{
+    "name": "OpenVPN",
+    "longDescription": "Secure remote access to your private business network and resources with OpenVPN's, reliable self-hosted VPN, in the cloud or on-premise",
+    "description": "Secure remote access to your private business network and resources with OpenVPN's, reliable self-hosted VPN, in the cloud or on-premise.",
+    "tags": ["Secure", "private", "network", "OpenVPN", "self-hosted", "linux"],
+    "repository": "https://hub.docker.com/r/openvpn/openvpn-as/",
+    "image": "https://hub.docker.com/r/openvpn/openvpn-as/",
+    "supported_architectures": ["amd64","arm64"]
+}
