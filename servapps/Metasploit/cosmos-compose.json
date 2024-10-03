@@ -13,6 +13,9 @@
             "security_opt": [
                 "seccomp:unconfined"
             ],
+            "ports": [
+                "4444:4444"
+              ],
             "labels": {
                 "cosmos-force-network-secured": "true",
                 "cosmos-auto-update": "true",
