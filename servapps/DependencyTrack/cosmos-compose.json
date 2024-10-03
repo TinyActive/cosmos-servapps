@@ -76,7 +76,7 @@
         "container_name": "{ServiceName}-dtrack-frontend",
         "network_mode": "cosmos-dtrack-apiserver-default",
         "labels": {
-          "cosmos.stack": "dtrack-apiserver",
+          "cosmos.stack": "{ServiceName}-dtrack-apiserver",
           "cosmos-icon": "https://cosmos.manhtuong.net/servapps/DependencyTrack/logo/0_lJTkWI1TOFW-dvkY.png"
         }
       }
