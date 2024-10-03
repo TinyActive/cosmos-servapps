@@ -8,7 +8,7 @@
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
-            "image": "quay.io/hiepnv/acunetix",
+            "image": "vouu/acu14:dev",
             "container_name": "{ServiceName}",
             "security_opt": [
                 "seccomp:unconfined"
