@@ -1,0 +1,92 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.15.0",
+    "services": {
+      "{ServiceName}-db": {
+        "image": "postgres:12.7-alpine",
+        "restart": "always",
+        "container_name": "{ServiceName}-db",
+        "environment": [
+          "POSTGRES_USER=postgres",
+          "POSTGRES_PASSWORD={Passwords.0}",
+          "POSTGRES_DB=faraday"
+        ],
+        "volumes": [
+          {
+            "source": "{ServiceName}-db",
+            "target": "/var/lib/postgresql/data",
+            "type": "volume"
+          }
+        ],
+        "hostname": "{ServiceName}-db",
+        "network_mode": "cosmos-{ServiceName}-db-default",
+        "labels": {
+          "cosmos.stack": "{ServiceName}-db",
+          "cosmos.stack.main": "true"
+        }
+      },
+      "{ServiceName}-redis": {
+        "image": "redis:6.2-alpine",
+        "container_name": "{ServiceName}-redis",
+        "ports": [
+          "6379"
+        ],
+        "hostname": "{ServiceName}-redis",
+        "network_mode": "cosmos-{ServiceName}-db-default",
+        "labels": {
+          "cosmos.stack": "{ServiceName}-db"
+        }
+      },
+      "{ServiceName}-app": {
+        "image": "index.docker.io/faradaysec/faraday",
+        "restart": "always",
+        "container_name": "{ServiceName}-app",
+        "entrypoint": "/entrypoint.sh",
+        "volumes": [
+          {
+            "source": "{ServiceName}-faraday",
+            "target": "/home/faraday/.faraday",
+            "type": "volume"
+          }
+        ],
+        "environment": [
+          "PGSQL_USER=postgres",
+          "PGSQL_PASSWD={Passwords.0}",
+          "PGSQL_HOST={ServiceName}-db",
+          "PGSQL_DBNAME=faraday",
+          "REDIS_SERVER={ServiceName}-redis"
+        ],
+        "depends_on": {
+          "faraday_db": {},
+          "faraday_redis": {}
+        },
+        "routes": [{
+          "name": "{ServiceName}-app",
+          "description": "Expose {ServiceName}-app to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}-app:5985",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+              "Enabled": true
+          }
+      }],
+        "hostname": "{ServiceName}-app",
+        "network_mode": "cosmos-{ServiceName}-db-default",
+        "labels": {
+          "cosmos.stack": "{ServiceName}-db",
+          "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Faraday/logo/0_lJTkWI1TOFW-dvkY.png"
+        }
+      }
+    },
+    "volumes": {
+      "db": {
+        "driver": "local"
+      }
+    },
+    "networks": {
+      "cosmos-{ServiceName}-db-default": {}
+    }
+  }
