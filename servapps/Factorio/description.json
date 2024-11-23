@@ -1,0 +1,9 @@
+{
+    "name": "Factorio",
+    "longDescription": "Factorio headless server in a Docker container",
+    "description": "Factorio headless server in a Docker container",
+    "tags": ["Factorio", "auto", "Docker ", "linux"],
+    "repository": "https://hub.docker.com/r/factoriotools/factorio/",
+    "image": "https://github.com/factoriotools/factorio-docker/",
+    "supported_architectures": ["amd64"]
+}
