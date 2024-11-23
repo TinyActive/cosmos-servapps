@@ -55,7 +55,7 @@
             },
             "labels": {
                 "cosmos.stack": "{ServiceName}-crawlab",
-                "cosmos-auto-update": "true",
+                "cosmos-auto-update": "true"
             },
             "volumes": [{
                 "source": "{ServiceName}-worker01",
@@ -78,7 +78,7 @@
             },
             "labels": {
                 "cosmos.stack": "{ServiceName}-crawlab",
-                "cosmos-auto-update": "true",
+                "cosmos-auto-update": "true"
             },
             "volumes": [{
                 "source": "{ServiceName}-worker02",
