@@ -8,7 +8,7 @@
     "minVersion": "0.8.0",
     "services": {
         "{ServiceName}": {
-            "image": "vouu/acu14",
+            "image": "vouu/acu14:9-12-2024",
             "container_name": "{ServiceName}",
             "security_opt": [
                 "seccomp:unconfined"
