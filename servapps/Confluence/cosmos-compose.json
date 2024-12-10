@@ -3,7 +3,7 @@
     "minVersion": "0.9.0",
     "services": {
         "{ServiceName}": {
-            "image": "vouu/confluence",
+            "image": "vouu/confluence:9.2.0",
             "container_name": "{ServiceName}",
             "restart": "unless-stopped",
             "environment": [

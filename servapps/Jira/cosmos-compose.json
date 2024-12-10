@@ -3,7 +3,7 @@
     "minVersion": "0.9.0",
     "services": {
       "{ServiceName}": {
-        "image": "vouu/jira:latest",
+        "image": "vouu/jira:10.3.0",
         "container_name": "{ServiceName}",
         "restart": "unless-stopped",
         "environment": [
