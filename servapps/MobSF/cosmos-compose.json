@@ -1,0 +1,34 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.15.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "opensecurity/mobile-security-framework-mobsf",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/MobSF/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "https://{ServiceName}:8000",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                },
+                "AcceptInsecureHTTPSTarget": true
+            }],
+            "shm_size": "8gb",
+            "restart": "unless-stopped"
+        }
+    }
+}
