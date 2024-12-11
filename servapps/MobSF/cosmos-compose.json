@@ -17,15 +17,14 @@
                 "name": "{ServiceName}",
                 "description": "Expose {ServiceName} to the web",
                 "useHost": true,
-                "target": "https://{ServiceName}:8000",
+                "target": "http://{ServiceName}:8000",
                 "mode": "SERVAPP",
                 "Timeout": 14400000,
                 "ThrottlePerMinute": 12000,
                 "BlockCommonBots": true,
                 "SmartShield": {
                     "Enabled": true
-                },
-                "AcceptInsecureHTTPSTarget": true
+                }
             }],
             "shm_size": "8gb",
             "restart": "unless-stopped"
