@@ -1,0 +1,43 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.15.0",
+    "services": {
+        "{ServiceName}": {
+            "image": "dstotijn/hetty",
+            "container_name": "{ServiceName}",
+            "security_opt": [
+                "seccomp:unconfined"
+            ],
+            "ports": [
+                "8080:8080"
+              ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://cosmos.manhtuong.net/servapps/Hetty/logo/0_lJTkWI1TOFW-dvkY.png"
+            },
+            "volumes": [{
+                    "source": "{ServiceName}-hetty",
+                    "target": "/root/.hetty",
+                    "type": "volume"
+                }
+            ],
+            "routes": [{
+                "name": "{ServiceName}",
+                "description": "Expose {ServiceName} to the web",
+                "useHost": true,
+                "target": "http://{ServiceName}:8080",
+                "mode": "SERVAPP",
+                "Timeout": 14400000,
+                "ThrottlePerMinute": 12000,
+                "BlockCommonBots": true,
+                "SmartShield": {
+                    "Enabled": true
+                },
+                "AcceptInsecureHTTPSTarget": true
+            }],
+            "shm_size": "4gb",
+            "restart": "unless-stopped"
+        }
+    }
+}
